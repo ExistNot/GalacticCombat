@@ -1,2 +1,2 @@
-# GalaxyCombat
-Adventure Game for TSoG
+# GalacticComabt
+Space Adventure Game for TSoG
