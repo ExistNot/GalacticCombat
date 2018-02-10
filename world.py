@@ -6,35 +6,105 @@ class MapTile:
 	def intro_text(self):
 		raise NotImplementedError("Create a subclass instead!")
 
-
-class StartTile(MapTile):
+##Room1 Tiles
+class ShipTile(MapTile):
 	def intro_text(self):
-		return """You find yourself in a cave with a flickering torch on the wall.
-		You can make out four paths, each equally as dark and foreboding.
+		return """Starter Room for Player
+		"""
+class Nail(MapTile):
+	def intro_text(self):
+		return """There appears to be a nail of the floor
+		"""
+class Hammer(MapTile):
+	def intro_text(self):
+		return """There appears to be a Hammer of the floor
+		"""
+class HatchEntrance(MapTile):
+	def intro_text(self):
+		return """This is the hatch entrance
 		"""
 
-
-class Room2(MapTile):
+class DoorEntrance(MapTile):
 	def intro_text(self):
-		return """Secret Room with parts for ship! The door you came through is on your left."""
-
-
-class Room1(MapTile):
+		return """This is a door entrance
+		"""
+class TopLeft(MapTile):
 	def intro_text(self):
-		return """Room in which ship and items are found...
-		starter room!
+		return """You are to the Left of the ship
+		"""
+class TopRight(MapTile):
+	def intro_text(self):
+		return """You are to the Right of the ship
+		"""
+class TopMiddle(MapTile):
+	def intro_text(self):
+		return """You are to the In front of the ship
+		"""
+class BottomLeft(MapTile):
+	def intro_text(self):
+		return """There's a Hammer to the north
 		"""
 		
+##Room2 Tiles
+class DoorExit(MapTile):
+	def intro_text(self):
+		return """This is a door exit
+		"""
+class HatchExit(MapTile):
+	def intro_text(self):
+		return """This is the hatch exit
+		"""
+class Cortex(MapTile):
+	def intro_text(self):
+		return """WOW There's a cortex here
+		(You might need it for the ship)"""
+class FusionCannon(MapTile):
+	def intro_text(self):
+		return """There's a Fusion Cannon
+		It's on other the strongest Ship blasters out there"""
+class R2Blank Space(MapTile):
+	def intro_text(self):
+		return"""
+			There are much more fasinating parts of the room to explore"""
+
+##Room 3 tiles
+class EmptySpace(MapTile):
+	def intro_text(self):
+		return """There are much more fasinating parts of Fo-Land to explore
+		"""
+class SomeOne(MapTile):
+	def intro_text(self):
+		return """There is Someone Here(The person will be added
+		"""
+		
+##Room 4 and Boss Tiles		
+class Room4(MapTile):
+	def intro_text(self):
+		return """BOSS BATTLE TILE
+		"""
+class BossTile(MapTile):
+	def intro_text(self):
+		return """
+		This Tile Hold the boss
+		"""
+#Spcae Tile	
 class SpaceTile(MapTile):
 	def intro_text(self):
 		return """Nothing is here except space..."""
 		
 class World:									# I choose to define the world as a class. This makes it more straightforward to import into the game.
 	map = [
-		[Room1(), 			Room2(), 		SpaceTile()],
-		[None, 			Room2(), 	SpaceTile()],
-		[None, 	StartTile(), 	BoringTile()],
-		[SpaceTile(), 	BoringTile(), 	Room4()]
+		[TopLeft(),		TopMiddle(),	TopRight(),DoorExit(),	FusionCannon(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile()],
+		[Nail(),		ShipTile(),			Hammer(),	Cortex(),		R2Blank(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile()],
+		[DoorEntrance(),HatchEntrance(),BottomLeft(),HatchExit(),   R2Blank(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile()],
+		[SpaceTile(),	SpaceTile(),		SpaceTile(),  SpaceTile(),    SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile()],
+		[SpaceTile(),	SpaceTile(),		SpaceTile(),  SpaceTile(),    SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile()],
+		[None,       EmptySpace,      EmptySpace,	SpaceTile(),SpaceTile(),		SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile()],
+		[EmptySpace,  EmptySpace,		None,	SpaceTile(),SpaceTile(),		SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile()],
+		[None,       EmptySpace,		EmptySpace,   SpaceTile(),SpaceTile(),		None,		None,		None,		None,	 None],
+		[None,       None,		None,   SpaceTile(),SpaceTile(),		None,		None,		None,		BossTile,None],
+		[SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile(),	None	,	None,		None,		None,	 None]
+		
 	]
 	
 	def __init__(self):
