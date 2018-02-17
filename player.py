@@ -1,7 +1,5 @@
 import items
 
-name = input("What is your name kid? ")
-
 class Player:
 	def __str__(self):
 		self.name = name
@@ -43,8 +41,7 @@ It's """ + self.name + """."""
 		self.move(dx=-1, dy=0)
 	def shoot(self):
 		self.ammo = self.ammo - 1
-def myself():
-	print(Player())
+
 
 class PlayerShip:
 	def __str__(self):

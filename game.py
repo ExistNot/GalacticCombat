@@ -26,11 +26,15 @@ wrap_width = 0								# We will eventually use this so that we can wrap text.
 def play():	
 	clear_screen()
 	print_wrap("Welcome to %s!" % game_name)
+	name = input("What's your name kid?")
 	player = Player()
 	world = World()
 	
 	print_wrap(world.tile_at(player.x,player.y).intro_text())
 	
+	def myself():
+		print(Player())
+		
 	while True:
 		print("")							# Print a blank line for spacing purposes.
 		[raw_input, parsed_input] = parse.get_command()
