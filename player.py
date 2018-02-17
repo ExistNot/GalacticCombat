@@ -8,10 +8,7 @@ class Player:
 		return """Ha, welcome to the Space Training Program. Oh, you forgot your name? 
 It's """ + self.name + """."""
 	def __init__(self):
-		#self.inventory = [items.Rock(),				#EDIT THE INVENTORY AFTER ALL STATS FOR PLAYER ARE ADDED
-						#items.Dagger(),				#EDIT THE INVENTORY AFTER ALL STATS FOR PLAYER ARE ADDED
-						#'Gold(5)',					#EDIT THE INVENTORY AFTER ALL STATS FOR PLAYER ARE ADDED
-						#'Crusty Bread']				#EDIT THE INVENTORY AFTER ALL STATS FOR PLAYER ARE ADDED
+		self.inventory = [items.PBlaster]
 		self.health	= 100
 		self.ammo = 10
 		self.shields = 50
