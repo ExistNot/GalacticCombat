@@ -146,14 +146,14 @@ class World:									# I choose to define the world as a class. This makes it mo
 	map = [
 		[TopLeft(),	TopMiddle(),	 TopRight(),    DoorExit(),    FusionCannon(),SpaceTile(),      SpaceTile(),    SpaceTile(),    SpaceTile(),SpaceTile()],
 		[Nail(),	ShipTile(),	 Hammer(),      Cortex(),      R2Blank(),     SpaceTile(),      SpaceTile(),    SpaceTile(),    SpaceTile(),SpaceTile()],
-		[DoorEntrance(),HatchEntrance(), BottomLeft(),  HatchExit(),   R2Blank(),     SpaceTile(),      SpaceTile(),    wormHole(),    SpaceTile(),SpaceTile()],
-		[SpaceTile(),	SpaceTile(),	 SpaceTile(),   SpaceTile(),   SpaceTile(),   SpaceTile(),      SpaceTile(),    wormHole(),    SpaceTile(),SpaceTile()],
-		[SpaceTile(),	SpaceTile(),	 SpaceTile(),   SpaceTile(),   SpaceTile(),   SpaceTile(),      SpaceTile(),    wormHole(),    SpaceTile(),SpaceTile()],
-		[wilkinsTile(), EmptySpace,      EmptySpace,    SpaceTile(),   SpaceTile(),   SpaceTile(),       wormHole(),    SpaceTile(),    SpaceTile(),SpaceTile()],
-		[EmptySpace,    EmptySpace,	 groundNPC(),   SpaceTile(),   SpaceTile(),   SpaceTile(),      SpaceTile(),    SpaceTile(),    SpaceTile(),SpaceTile()],
-		[riddlerTile,   EmptySpace,	 EmptySpace,    SpaceTile(),   SpaceTile(),   endStartTile(),	epodTile(),	moveSpace(),	moveSpace(),moveSpace()],
-		[groundNPC(),   planetEntrance(),merchantTile(),SpaceTile(),   SpaceTile(),   endStartTile(),	epodTile(),	moveSpace(),	BossTile(), moveSpace()],
-		[SpaceTile(),   SpaceTile(),     SpaceTile(),    SpaceTile(),  SpaceTile(),   endStartTile(),	epodTile(),	moveSpace(),	moveSpace(),moveSpace()]
+		[DoorEntrance(),HatchEntrance(), BottomLeft(),  HatchExit(),   R2Blank(),     SpaceTile(),      SpaceTile(),    wormHole(),    	SpaceTile(),	SpaceTile()],
+		[SpaceTile(),	SpaceTile(),	 SpaceTile(),   SpaceTile(),   SpaceTile(),   SpaceTile(),      SpaceTile(),    wormHole(),    	SpaceTile(),	SpaceTile()],
+		[SpaceTile(),	SpaceTile(),	 SpaceTile(),   SpaceTile(),   SpaceTile(),   SpaceTile(),      SpaceTile(),    wormHole(),    	SpaceTile(),	SpaceTile()],
+		[wilkinsTile(), EmptySpace,      EmptySpace,    SpaceTile(),   SpaceTile(),   SpaceTile(),      wormHole(),    	SpaceTile(),    SpaceTile(),	SpaceTile()],
+		[EmptySpace,    EmptySpace,	 	 groundNPC(),   SpaceTile(),   SpaceTile(),   SpaceTile(),      SpaceTile(),    SpaceTile(),    SpaceTile(),	SpaceTile()],
+		[riddlerTile,   EmptySpace,	 	 EmptySpace,    SpaceTile(),   SpaceTile(),   endStartTile(),	epodTile(),		moveSpace(),	moveSpace(),	moveSpace()],
+		[groundNPC(),   planetEntrance(),merchantTile(),SpaceTile(),   SpaceTile(),   endStartTile(),	epodTile(),		moveSpace(),	BossTile(), 	moveSpace()],
+		[SpaceTile(),   SpaceTile(),     SpaceTile(),   SpaceTile(),   SpaceTile(),   endStartTile(),	epodTile(),		moveSpace(),	moveSpace(),	moveSpace()]
 		
 	]
 	
