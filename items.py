@@ -11,3 +11,8 @@ class PBlaster(Weapon):
 		self.name = "Blaster"
 		self.description = "A Hand held gun used by the cadets and pilots of the space program."
 		self.damage = 25
+class Gold():
+        def __init__ (self):
+                self.value = 100
+        def pay(self):
+                self.value = self.value-1

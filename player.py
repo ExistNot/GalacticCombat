@@ -41,7 +41,15 @@ It's """ + self.name + """."""
 		self.move(dx=-1, dy=0)
 	def shoot(self):
 		self.ammo = self.ammo - 1
-
+		if(random.randint(1,100)<=self.accuracy):
+			self.ammo = self.ammo - 1
+			print("You hit the Enemy!")
+		else:
+			print("You missed the enemy")
+	def status(self):
+		print("HP = "  + self.health +" Ammo = " + self.ammo )
+def myself():
+	print(Player())
 
 class PlayerShip:
 	def __str__(self):
