@@ -102,32 +102,58 @@ class planetEntrance(Maptile):
                         Be careful.....
 		"""
 ##Room 4 and Boss Tiles		
-class Room4(MapTile):
-	def intro_text(self):
-		return """BOSS BATTLE TILE
-		"""
 class BossTile(MapTile):
+	def intro_text(self):
+		return """
+		This Tile Holds the boss
+		"""
+class epodTile(MapTile):
 	def intro_text(self):
 		return """
 		This Tile Hold the boss
 		"""
-#Spcae Tile	
+class endStartTile(MapTile):
+        def intro_text(self):
+                return """
+                        This is the beginning of the end?
+                        But for who? You? The Invaders?
+                        3 enemy epod stare out at you. A single ship
+                        You feel the sweat of your brow; tensions are rising...
+                        Are you ready, to face your destiny
+                        (I guess it doesn't matter, because here, you GOOOOO
+                        """
+class moveSpace(MapTile):
+        def intro_text(self):
+                return """
+                        This is space you can move in.
+                        You're so close... DEFEAT THAT BOSS SHIP
+                        """
+
+
+#Space Tiles	
 class SpaceTile(MapTile):
 	def intro_text(self):
 		return """Nothing is here except space..."""
-		
+
+class wormHole(MapTile):
+        def intro_text(self):
+                return """You are in a worm hole
+                                You are also dead,
+                                Next time try not to stray in empty space
+                                Game Over
+                                """
 class World:									# I choose to define the world as a class. This makes it more straightforward to import into the game.
 	map = [
-		[TopLeft(),	TopMiddle(),	 TopRight(),  DoorExit(),    FusionCannon(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile()],
-		[Nail(),	ShipTile(),	 Hammer(),    Cortex(),	    R2Blank(),     SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile()],
-		[DoorEntrance(),HatchEntrance(), BottomLeft(),HatchExit(),   R2Blank(),     SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile()],
-		[SpaceTile(),	SpaceTile(),	 SpaceTile(), SpaceTile(),   SpaceTile(),   SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile()],
-		[SpaceTile(),	SpaceTile(),	 SpaceTile(), SpaceTile(),   SpaceTile(),   SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile()],
-		[wilkinsTile(), EmptySpace,      EmptySpace,  SpaceTile(),   SpaceTile(),   SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile()],
-		[EmptySpace,    EmptySpace,	 groundNPC(), SpaceTile(),   SpaceTile(),   SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile()],
-		[riddlerTile,   EmptySpace,	 EmptySpace,  SpaceTile(),SpaceTile(),		None,		None,		None,		None,	 None],
-		[groundNPC(),   planetEntrance(),merchantTile(),SpaceTile(),SpaceTile(),		None,		None,		None,		BossTile,None],
-		[SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile(),	None	,	None,		None,		None,	 None]
+		[TopLeft(),	TopMiddle(),	 TopRight(),    DoorExit(),    FusionCannon(),SpaceTile(),      SpaceTile(),    SpaceTile(),    SpaceTile(),SpaceTile()],
+		[Nail(),	ShipTile(),	 Hammer(),      Cortex(),      R2Blank(),     SpaceTile(),      SpaceTile(),    SpaceTile(),    SpaceTile(),SpaceTile()],
+		[DoorEntrance(),HatchEntrance(), BottomLeft(),  HatchExit(),   R2Blank(),     SpaceTile(),      SpaceTile(),    wormHole(),    SpaceTile(),SpaceTile()],
+		[SpaceTile(),	SpaceTile(),	 SpaceTile(),   SpaceTile(),   SpaceTile(),   SpaceTile(),      SpaceTile(),    wormHole(),    SpaceTile(),SpaceTile()],
+		[SpaceTile(),	SpaceTile(),	 SpaceTile(),   SpaceTile(),   SpaceTile(),   SpaceTile(),      SpaceTile(),    wormHole(),    SpaceTile(),SpaceTile()],
+		[wilkinsTile(), EmptySpace,      EmptySpace,    SpaceTile(),   SpaceTile(),   SpaceTile(),       wormHole(),    SpaceTile(),    SpaceTile(),SpaceTile()],
+		[EmptySpace,    EmptySpace,	 groundNPC(),   SpaceTile(),   SpaceTile(),   SpaceTile(),      SpaceTile(),    SpaceTile(),    SpaceTile(),SpaceTile()],
+		[riddlerTile,   EmptySpace,	 EmptySpace,    SpaceTile(),   SpaceTile(),   endStartTile(),	epodTile(),	moveSpace(),	moveSpace(),moveSpace()],
+		[groundNPC(),   planetEntrance(),merchantTile(),SpaceTile(),   SpaceTile(),   endStartTile(),	epodTile(),	moveSpace(),	BossTile(), moveSpace()],
+		[SpaceTile(),   SpaceTile(),     SpaceTile(),    SpaceTile(),  SpaceTile(),   endStartTile(),	epodTile(),	moveSpace(),	moveSpace(),moveSpace()]
 		
 	]
 	
