@@ -61,16 +61,16 @@ class Cortex(MapTile):
 class FusionCannon(MapTile):
 	def intro_text(self):
 		return """There's a Fusion Cannon
-		It's on other the strongest Ship blasters out there"""
+		It's on other strong Ship blasters out there"""
 class R2Blank(MapTile):
 	def intro_text(self):
 		return"""
-			There are much more fasinating parts of the room to explore"""
+			There are much more fascinating parts of the room to explore"""
 
 ##Room 3 tiles
 class EmptySpace(MapTile):
 	def intro_text(self):
-		return """There are much more fasinating parts of Fo-Land to explore
+		return """There are much more fascinating parts of Fo-Land to explore
 		"""
 class SomeOne(MapTile):
 	def intro_text(self):
@@ -84,7 +84,7 @@ class groundNPC(Maptile):
 class wilkinsTile(Maptile):
         def intro_text(self):
                 return """
-                They're a strange man here. His name appears to be MR.WILKINS
+                They're a strange man here. His name appears to be MR. WILKINS
 		"""
 class riddlerTile(Maptile):
         def intro_text(self):
@@ -98,7 +98,7 @@ class planetEntrance(Maptile):
         def intro_text(self):
                 return """You have entered FO-LAND!!!!!
                         Here you will find all the the parts a galaxy pilot could want, and also gossip for the locals
-                        But be careful, Invaders stop here too, and their isn't anyone on in the land that won't rat you ok for the high bounty of Galactic Combater's head
+                        But be careful, Invaders stop here too, and there isn't anyone on in the land that won't rat you out for the high bounty of Galactic Combater's head
                         Be careful.....
 		"""
 ##Room 4 and Boss Tiles		
@@ -144,8 +144,8 @@ class wormHole(MapTile):
                                 """
 class World:									# I choose to define the world as a class. This makes it more straightforward to import into the game.
 	map = [
-		[TopLeft(),	TopMiddle(),	 TopRight(),    DoorExit(),    FusionCannon(),SpaceTile(),      SpaceTile(),    SpaceTile(),    SpaceTile(),SpaceTile()],
-		[Nail(),	ShipTile(),	 Hammer(),      Cortex(),      R2Blank(),     SpaceTile(),      SpaceTile(),    SpaceTile(),    SpaceTile(),SpaceTile()],
+		[TopLeft(),		TopMiddle(),	 TopRight(),    DoorExit(),    FusionCannon(),SpaceTile(),      SpaceTile(),    SpaceTile(),    SpaceTile(),	SpaceTile()],
+		[Nail(),		ShipTile(),	 	 Hammer(),      Cortex(),      R2Blank(),     SpaceTile(),      SpaceTile(),    SpaceTile(),    SpaceTile(),	SpaceTile()],
 		[DoorEntrance(),HatchEntrance(), BottomLeft(),  HatchExit(),   R2Blank(),     SpaceTile(),      SpaceTile(),    wormHole(),    	SpaceTile(),	SpaceTile()],
 		[SpaceTile(),	SpaceTile(),	 SpaceTile(),   SpaceTile(),   SpaceTile(),   SpaceTile(),      SpaceTile(),    wormHole(),    	SpaceTile(),	SpaceTile()],
 		[SpaceTile(),	SpaceTile(),	 SpaceTile(),   SpaceTile(),   SpaceTile(),   SpaceTile(),      SpaceTile(),    wormHole(),    	SpaceTile(),	SpaceTile()],

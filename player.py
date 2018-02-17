@@ -13,10 +13,10 @@ It's """ + self.name + """."""
 		self.ammo = 10
 		self.shields = 50
 		self.accuracy = 75			#<40 is garbage,   around 50 is okay,    >60 is great
-		self.damage = 50
 		self.reloadtime = 2
 		self.x = 1   					
 		self.y = 1
+		self.damage = PBlaster.damage
 	def reload(self):
 		if self.ammo == 0:
 			time.sleep(reloadtime)
@@ -26,7 +26,6 @@ It's """ + self.name + """."""
 		print("Inventory:")
 		for item in self.inventory:
 			print('* ' + str(item))
-			
 	def move(self, dx, dy):
 		self.x += dx
 		self.y += dy
@@ -46,24 +45,16 @@ It's """ + self.name + """."""
 		self.ammo = self.ammo - 1
 def myself():
 	print(Player())
-	
-myself()
 
 class PlayerShip:
 	def __str__(self):
 		return """Your trusty ship!"""
 	def __init__(self):
-		self.inventory = [items.PBlaster]
 		self.health	= 100
-		self.ammo = 10
 		self.shields = 50
 		self.damage = 50
-		self.x = 1   					#will change to start on the ship later
+		self.x = 1   				
 		self.y = 1
-	def reload(self):
-		if self.ammo == 0:
-			time.sleep(reloadtime)
-			self.ammo = 10
 	def move(self, dx, dy):
 		self.x += dx
 		self.y += dy
@@ -81,3 +72,4 @@ class PlayerShip:
 		self.move(dx=-1, dy=0)
 	def shoot(self):
 		self.ammo = self.ammo - 1
+		
