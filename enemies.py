@@ -7,6 +7,8 @@ class Enemy:
 
 	def is_alive(self):
 		return self.hp > 0
+	def status(self):
+		print("Enemy HP: "+self.hp)
 
 
 class Invader(Enemy):## ground troop
