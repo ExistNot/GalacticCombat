@@ -62,7 +62,7 @@ class FusionCannon(MapTile):
 	def intro_text(self):
 		return """There's a Fusion Cannon
 		It's on other the strongest Ship blasters out there"""
-class R2Blank Space(MapTile):
+class R2Blank(MapTile):
 	def intro_text(self):
 		return"""
 			There are much more fasinating parts of the room to explore"""
@@ -76,7 +76,31 @@ class SomeOne(MapTile):
 	def intro_text(self):
 		return """There is Someone Here(The person will be added
 		"""
-		
+class groundNPC(Maptile):
+        def intro_text(self):
+                return """
+                        There's an enemy Invader!!!!!!!!!!!
+		"""
+class wilkinsTile(Maptile):
+        def intro_text(self):
+                return """
+                They're a strange man here. His name appears to be MR.WILKINS
+		"""
+class riddlerTile(Maptile):
+        def intro_text(self):
+                return """There's something puzzling about this man! He name appears to be A RIDDLER
+		"""
+class merchantTile(Maptile):
+        def intro_text(self):
+                return """There's a MERCHANT here!
+		"""
+class planetEntrance(Maptile):
+        def intro_text(self):
+                return """You have entered FO-LAND!!!!!
+                        Here you will find all the the parts a galaxy pilot could want, and also gossip for the locals
+                        But be careful, Invaders stop here too, and their isn't anyone on in the land that won't rat you ok for the high bounty of Galactic Combater's head
+                        Be careful.....
+		"""
 ##Room 4 and Boss Tiles		
 class Room4(MapTile):
 	def intro_text(self):
@@ -94,15 +118,15 @@ class SpaceTile(MapTile):
 		
 class World:									# I choose to define the world as a class. This makes it more straightforward to import into the game.
 	map = [
-		[TopLeft(),		TopMiddle(),	TopRight(),DoorExit(),	FusionCannon(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile()],
-		[Nail(),		ShipTile(),			Hammer(),	Cortex(),		R2Blank(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile()],
-		[DoorEntrance(),HatchEntrance(),BottomLeft(),HatchExit(),   R2Blank(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile()],
-		[SpaceTile(),	SpaceTile(),		SpaceTile(),  SpaceTile(),    SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile()],
-		[SpaceTile(),	SpaceTile(),		SpaceTile(),  SpaceTile(),    SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile()],
-		[None,       EmptySpace,      EmptySpace,	SpaceTile(),SpaceTile(),		SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile()],
-		[EmptySpace,  EmptySpace,		None,	SpaceTile(),SpaceTile(),		SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile()],
-		[None,       EmptySpace,		EmptySpace,   SpaceTile(),SpaceTile(),		None,		None,		None,		None,	 None],
-		[None,       None,		None,   SpaceTile(),SpaceTile(),		None,		None,		None,		BossTile,None],
+		[TopLeft(),	TopMiddle(),	 TopRight(),  DoorExit(),    FusionCannon(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile()],
+		[Nail(),	ShipTile(),	 Hammer(),    Cortex(),	    R2Blank(),     SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile()],
+		[DoorEntrance(),HatchEntrance(), BottomLeft(),HatchExit(),   R2Blank(),     SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile()],
+		[SpaceTile(),	SpaceTile(),	 SpaceTile(), SpaceTile(),   SpaceTile(),   SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile()],
+		[SpaceTile(),	SpaceTile(),	 SpaceTile(), SpaceTile(),   SpaceTile(),   SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile()],
+		[wilkinsTile(), EmptySpace,      EmptySpace,  SpaceTile(),   SpaceTile(),   SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile()],
+		[EmptySpace,    EmptySpace,	 groundNPC(), SpaceTile(),   SpaceTile(),   SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile()],
+		[riddlerTile,   EmptySpace,	 EmptySpace,  SpaceTile(),SpaceTile(),		None,		None,		None,		None,	 None],
+		[groundNPC(),   planetEntrance(),merchantTile(),SpaceTile(),SpaceTile(),		None,		None,		None,		BossTile,None],
 		[SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile(),SpaceTile(),	None	,	None,		None,		None,	 None]
 		
 	]
