@@ -28,8 +28,8 @@ class Wall(Barrier):
 	def description(self):
 		return "There doesn't seem to be a path to the %s." % self.direction
 		
-class WoodenDoor(Barrier):
-	name = 'Wooden Door'
+class Door(Barrier):
+	name = 'Door'
 	state = 'closed'	# Used to store the state of doors or hidden passages.
 	
 	verbose = True	# Used to determine whether or not include the barrier's description in the room description.
@@ -62,7 +62,7 @@ class WoodenDoor(Barrier):
 		return [False, "", inventory]
 		
 		
-class LockedDoor(Barrier):
+class HatchDoor(Barrier):
 	name = 'Locked Door'
 	state = 'closed'	# Used to store the state of doors or hidden passages.
 	locked = True		# Used to store the state of locked doors, if applicable.

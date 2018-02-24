@@ -158,25 +158,25 @@ class SomeOne(MapTile):
 	def intro_text(self):
 		return """There is Someone Here(The person will be added
 		"""
-class groundNPC(Maptile):
+class groundNPC(MapTile):
         def intro_text(self):
                 return """
                         There's an enemy Invader!!!!!!!!!!!
 		"""
-class wilkinsTile(Maptile):
+class wilkinsTile(MapTile):
         def intro_text(self):
                 return """
                 They're a strange man here. His name appears to be MR. WILKINS
 		"""
-class riddlerTile(Maptile):
+class riddlerTile(MapTile):
         def intro_text(self):
                 return """There's something puzzling about this man! He name appears to be A RIDDLER
 		"""
-class merchantTile(Maptile):
+class merchantTile(MapTile):
         def intro_text(self):
                 return """There's a MERCHANT here!
 		"""
-class planetEntrance(Maptile):
+class planetEntrance(MapTile):
         def intro_text(self):
                 return """You have entered FO-LAND!!!!!
                         Here you will find all the the parts a galaxy pilot could want, and also gossip for the locals
@@ -228,13 +228,13 @@ class World:									# I choose to define the world as a class. This makes it mo
 	map = [
 		[TopLeft(barriers = [barriers.Wall('n')]),														TopMiddle(barriers = [barriers.Wall('n')]),	 									DoorEntrance(barriers = [barriers.Wall('n'),barriers.Door('e')]),    					DoorExit(barriers = [barriers.Wall('n')]),    					FusionCannon(barriers = [barriers.Wall('n'),barriers.Wall('e')]),SpaceTile(),      SpaceTile(),    SpaceTile(),    	SpaceTile(),	SpaceTile()],
 		[Nail(),																						ShipTile(),	 																	Hammer(barriers = [barriers.Wall('e')]),      											Cortex(barriers = [barriers.Wall('w')]),      					R2Blank(barriers = [barriers.Wall('e')]),     					SpaceTile(),      SpaceTile(),    SpaceTile(),    	SpaceTile(),	SpaceTile()],
-		[BottomLeft(barriers = [barriers.Wall('w'),barries.Wall('s')]), 								MiddleLeft(barriers = [barries.Wall('s')]),   									HatchEntrance(barriers = [barriers.Wall('e'),barries.Wall('s'),barries.HatchDoor('e')]),HatchExit(barriers = [barriers.Wall('w'),barries.Wall('s')]),  R2Blank(barriers = [barriers.Wall('e'),barries.Wall('s')]),     SpaceTile(),      SpaceTile(),    wormHole(),    	SpaceTile(),	SpaceTile()],
+		[BottomLeft(barriers = [barriers.Wall('w'),barriers.Wall('s')]), 								MiddleLeft(barriers = [barriers.Wall('s')]),   									HatchEntrance(barriers = [barriers.Wall('e'),barriers.Wall('s'),barriers.HatchDoor('e')]),HatchExit(barriers = [barriers.Wall('w'),barriers.Wall('s')]),  R2Blank(barriers = [barriers.Wall('e'),barriers.Wall('s')]),     SpaceTile(),      SpaceTile(),    wormHole(),    	SpaceTile(),	SpaceTile()],
 		[SpaceTile(),																					SpaceTile(),	 																SpaceTile(),   																			SpaceTile(),   													SpaceTile(),   													SpaceTile(),      SpaceTile(),    wormHole(),    	SpaceTile(),	SpaceTile()],
-		[SpaceTile(),																					SpaceTile(),	 																SpaceTile(),   																			SpaceTile(),   													SpaceTile(),   													SpaceTile(),      SpaceTile(),    wormHole(),    	SpaceTile(),	SpaceTile()]
-		[wilkinsTile(barriers = [barriers.Wall('w'),barries.Wall('n')]), 								EmptySpace(barriers = [barries.Wall('n')]),      								EmptySpace(barriers = [barriers.Wall('e'),barries.Wall('n')]),   						SpaceTile(),   													SpaceTile(),   													SpaceTile(),      SpaceTile(),    	SpaceTile(),    SpaceTile(),	SpaceTile()],
+		[SpaceTile(),																					SpaceTile(),	 																SpaceTile(),   																			SpaceTile(),   													SpaceTile(),   													SpaceTile(),      SpaceTile(),    wormHole(),    	SpaceTile(),	SpaceTile()],
+		[wilkinsTile(barriers = [barriers.Wall('w'), barriers.Wall('n')]), 								EmptySpace(barriers = [barriers.Wall('n')]),      								EmptySpace(barriers = [barriers.Wall('e'),barriers.Wall('n')]),   						SpaceTile(),   													SpaceTile(),   													SpaceTile(),      SpaceTile(),    	SpaceTile(),    SpaceTile(),	SpaceTile()],
 		[EmptySpace(barriers = [barriers.Wall('w')]),    												EmptySpace(),	 	 															groundNPC(barriers = [barriers.Wall('e')]),   											SpaceTile(),   													SpaceTile(),   													SpaceTile(),      	SpaceTile(),    SpaceTile(),    SpaceTile(),	SpaceTile()],
 		[riddlerTile(),   																				EmptySpace(),	 	 															EmptySpace(barriers = [barriers.Wall('e')]),    										SpaceTile(),   													SpaceTile(),   													endStartTile(),		epodTile(),		moveSpace(),	moveSpace(),	moveSpace()],
-		[groundNPC(barriers = [barriers.Wall('e'),barries.Wall('s')]),   								planetEntrance(),																merchantTile(barriers = [barriers.Wall('e'),barries.Wall('s')]),						SpaceTile(),  													SpaceTile(),   													endStartTile(),		epodTile(),		moveSpace(),	BossTile(), 	moveSpace()],
+		[groundNPC(barriers = [barriers.Wall('e'),barriers.Wall('s')]),   								planetEntrance(),																merchantTile(barriers = [barriers.Wall('e'),barriers.Wall('s')]),						SpaceTile(),  													SpaceTile(),   													endStartTile(),		epodTile(),		moveSpace(),	BossTile(), 	moveSpace()],
 		[SpaceTile(),   																				SpaceTile(),     																SpaceTile(),   																			SpaceTile(),   													SpaceTile(),   													endStartTile(),		epodTile(),		moveSpace(),	moveSpace(),	moveSpace()]
 		
 	]
