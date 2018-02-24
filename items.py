@@ -62,16 +62,21 @@ class Gold(Item):
 		
 class Gold_Coins(Gold):
 	name = "gold coins"
-	value = 5		
-	
+	value = 5
 	description = "A small handful of gold coins."
 	dropped_description = "A shiny handful of gold coins is lying on the ground."
 
 class Consumable(Item):
 	consume_description = "You should define flavor text for consuming this item in its subclass."
 
-	healing_value = 0		# Define this appropriately in your subclass.
+	shield_value = 0		# Define this appropriately in your subclass.
 		
 	def consume(self):
 		return [self.consume_description, self.healing_value]
+		
+class Shield_Pack(Consumable):
+	name = "Shield Pack"
+	shield_value = 50
+	description = "A shield pack that increases your shields by 50 to either you or your ship!"
+	dropped_description = "Your shield pack is laying on the ground, ready to be used."
 

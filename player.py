@@ -8,6 +8,7 @@ It's """ + self.name + """."""
 	def __init__(self):
 		self.inventory = [items.PBlaster]
 		self.health	= 100
+		self.gold = 0
 		self.ammo = 10
 		self.shields = 50
 		self.accuracy = 75			#<40 is garbage,   around 50 is okay,    >60 is great
@@ -77,4 +78,4 @@ class PlayerShip:
 		self.move(dx=-1, dy=0)
 	def shoot(self):
 		self.ammo = self.ammo - 1
-		
+
