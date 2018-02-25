@@ -79,4 +79,13 @@ class Shield_Pack(Consumable):
 	shield_value = 50
 	description = "A shield pack that increases your shields by 50 to either you or your ship!"
 	dropped_description = "Your shield pack is laying on the ground, ready to be used."
+class hatchKey(Item):
+	name = "Hatch Key"
+	description = "This key allows you to open the hatch. Their is a button in the center of it."
 
+class Hammer(Item):
+	name = "Hammer"
+	description = "A strong iron-alloy tool, this hammer will pound any thing into its place."
+class Nail(Item):
+	name = "Nail"
+	description = "A Iron-alloy nail. It appears to look similar to a hole in your ship."
