@@ -86,6 +86,8 @@ class hatchKey(Item):
 class Hammer(Item):
 	name = "Hammer"
 	description = "A strong iron-alloy tool, this hammer will pound any thing into its place."
+	dropped_description = "A hammer lies on the floor"
 class Nail(Item):
 	name = "Nail"
 	description = "A Iron-alloy nail. It appears to look similar to a hole in your ship."
+	dropped_description = "A nail lies on the floor"

@@ -92,9 +92,9 @@ class MapTile:
 class ShipTile(MapTile):
 	description = "Starter Room for Player"
 class Nail(MapTile):
-	description = "There appears to be a nail of the floor"
+	description = ""
 class Hammer(MapTile):
-	description = "There appears to be a Hammer of the floor"
+	description = ""
 class HatchEntrance(MapTile):
 	description="This is the hatch entrance"
 
