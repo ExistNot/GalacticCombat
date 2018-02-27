@@ -90,113 +90,62 @@ class MapTile:
 
 ##Room1 Tiles
 class ShipTile(MapTile):
-	def intro_text(self):
-		return """Starter Room for Player
-		"""
+	description = "Starter Room for Player"
 class Nail(MapTile):
-	def intro_text(self):
-		return """There appears to be a nail of the floor
-		"""
+	description = "There appears to be a nail of the floor"
 class Hammer(MapTile):
-	def intro_text(self):
-		return """There appears to be a Hammer of the floor
-		"""
+	description = "There appears to be a Hammer of the floor"
 class HatchEntrance(MapTile):
-	def intro_text(self):
-		return """This is the hatch entrance
-		"""
+	description="This is the hatch entrance"
 
 class DoorEntrance(MapTile):
-	def intro_text(self):
-		return """This is a door entrance
-		"""
+	description = "This is a door entrance"
+
 class TopLeft(MapTile):
-	def intro_text(self):
-		return """You are to the Left of the ship
-		"""
+	description="You are to the Left of the ship"
 class MiddleLeft(MapTile):
-	def intro_text(self):
-		return """You are to the left of the ship
-		"""
+	description= "You are to the left of the ship"
 class TopMiddle(MapTile):
-	def intro_text(self):
-		return """You are to the In front of the ship
-		"""
+	description="You are to the In front of the ship"
 class BottomLeft(MapTile):
-	def intro_text(self):
-		return """There's a Hammer to the north
-		"""
-		
+	description = "There's a Hammer to the north"
 ##Room2 Tiles
 class DoorExit(MapTile):
-	def intro_text(self):
-		return """You are on the other side of the door
-		"""
+	description = "You are on the other side of the door"
 class HatchExit(MapTile):
-	def intro_text(self):
-		return """This is the hatch exit
-		"""
+	description = "This is the hatch exit"
 class Cortex(MapTile):
-	def intro_text(self):
-		return """WOW There's a cortex here
-		(You might need it for the ship)"""
+	description = "WOW There's a cortex here(You might need it for the ship)"
 class FusionCannon(MapTile):
-	def intro_text(self):
-		return """There's a Fusion Cannon
-		It's on other strong Ship blasters out there"""
+	description = "There's a Fusion Cannon It's on other strong Ship blasters out there"
 class R2Blank(MapTile):
-	def intro_text(self):
-		return"""
-			There are much more fascinating parts of the room to explore"""
+	description = "There are much more fascinating parts of the room to explore"
 
 ##Room 3 tiles
 class EmptySpace(MapTile):
-	def intro_text(self):
-		return """There are much more fascinating parts of Fo-Land to explore
-		"""
+	description = "There are much more fascinating parts of Fo-Land to explore"
 class SomeOne(MapTile):
-	def intro_text(self):
-		return """There is Someone Here(The person will be added
-		"""
+	description = "There is Someone Here(The person will be added)"
 class groundNPC(MapTile):
-        def intro_text(self):
-                return """
-                        There's an enemy Invader!!!!!!!!!!!
-		"""
+        description = "There's an enemy Invader!!!!!!!!!!!"
 class wilkinsTile(MapTile):
-        def intro_text(self):
-                return """
-                They're a strange man here. His name appears to be MR. WILKINS
-		"""
+        description = "They're a strange man here. His name appears to be MR. WILKINS"
 class riddlerTile(MapTile):
-        def intro_text(self):
-                return """There's something puzzling about this man! He name appears to be A RIDDLER
-		"""
+        description = "There's something puzzling about this man! He name appears to be A RIDDLER"
 class merchantTile(MapTile):
-        def intro_text(self):
-                return """There's a MERCHANT here!
-		"""
+        description = "There's a MERCHANT here!"
 class planetEntrance(MapTile):
-        def intro_text(self):
-                return """You have entered FO-LAND!!!!!
+        description = """You have entered FO-LAND!!!!!
                         Here you will find all the the parts a galaxy pilot could want, and also gossip for the locals
                         But be careful, Invaders stop here too, and there isn't anyone on in the land that won't rat you out for the high bounty of Galactic Combater's head
-                        Be careful.....
-		"""
+                        Be careful....."""
 ##Room 4 and Boss Tiles		
 class BossTile(MapTile):
-	def intro_text(self):
-		return """
-		This Tile Holds the boss
-		"""
+	description = "This Tile Holds the boss"
 class epodTile(MapTile):
-	def intro_text(self):
-		return """
-		This Tile Hold the boss
-		"""
+	description = "This Tile Hold the boss"
 class endStartTile(MapTile):
-        def intro_text(self):
-                return """
+        description = """
                         This is the beginning of the end?
                         But for who? You? The Invaders?
                         3 enemy epod stare out at you. A single ship
@@ -205,8 +154,7 @@ class endStartTile(MapTile):
                         (I guess it doesn't matter, because here, you GOOOOO
                         """
 class moveSpace(MapTile):
-        def intro_text(self):
-                return """
+        description = """
                         This is space you can move in.
                         You're so close... DEFEAT THAT BOSS SHIP
                         """
