@@ -1,5 +1,5 @@
 import items
-import Player
+
 class NPC:
 	name = "Do not create raw NPCs!"
 	description = "There is no description here because you should not create raw NPC objects!"
@@ -38,15 +38,15 @@ class Wilkins(NPC):
 		print("Mr. Wilkins says 'Give me a Gem and you shall receive informations on the Invaders!")
 		if SparklingGem in Player.inventory:	 
 				Wilkinsobject = True
-				if Wilkinsobject == True:
-				for index in range(len(self.inventory)):
-					if(isinstance(self.inventory[index], items.SparklingGem))
-						for index in reversed(SparklingGem_indices):		# Reversed to avoid popping the wrong element.	
-						self.inventory.pop(index)
-					print("""Thanks. Here's the info, don't tell anybody... 
-				The Invader's commander is located in the bottom right sector of space.""")
-			else:
-				print("It's not there, try again")		
+				if (Wilkinsobject == True):
+					for index in range(len(self.inventory)):
+						if(isinstance(self.inventory[index], items.SparklingGem)):
+							for index in reversed(SparklingGem_indices):		# Reversed to avoid popping the wrong element.	
+								self.inventory.pop(index)
+								print("""Thanks. Here's the info, don't tell anybody... 
+								The Invader's commander is located in the bottom right sector of space.""")
+				else:
+					print("It's not there, try again")
 	def first_time(self):		# Used to have your NPC do something different the first time you see them.
 		self.first_encounter = False
 		text = self.description
@@ -62,25 +62,24 @@ class Wilkins(NPC):
 				return [True, text, inventory]				
 				
 class Riddler(NPC):
-	name = "A Riddler"
-	goods = [GoldCoins]
+	name = "Riddler"
+	goods = [items.Gold_Coins()]
 	quantities = [1, -1, 2]		# Set quantity to -1 if you want it to be infinite.
 	description = "A Riddler that gives riddles for Gold."
-	def talk(self):		# Add to this method if you want to be able to talk to your NPC.
+	def talk(self):		# Add to this method if you want to be able to talk to your NPC. ###CHANGE LATER
 		print("Want some Gold? Ask for a riddle and I shall fiddle your mind down the to middle!")
 		print("the riddle")
 		ranswer = "the answer"
 		pans = input("What is your response?")
+		return""
 		
-		for item in self.goods:
-			if item.value > 0:
-				if(self.quantities[self.goods.index(item)] > 0):
-					quantity = "quantity = %d" % self.quantities[self.goods.index(item)]
-				else:
-					quantity = "quantity = unlimited"
-				print("* " + item.name.title() + " (" + str(item.value) + " gold, " + quantity + ")")
-		return ""
-		
+	def riddle(self):
+		print("Want some Gold? Ask for a riddle and I shall fiddle your mind down the to middle!")
+		print("the riddle")
+		ranswer = "the answer"
+		pans = input("What is your response?")
+		return pans==ranswer 
+
 	def give(self, item, inventory):
 		for good in self.goods:
 			if(good == item):
@@ -122,7 +121,7 @@ class Merchant(NPC):
 					SG = input("Would you like to buy the majestic Sparkling Gem?")
 					if SG == yes:
 						Player.inventory.append("Sparkling Gem")
-							#Take out gold for the Gem
-							print("That's 10 Gold, thanks for the business.")
+						#Take out gold for the Gem
+						print("That's 10 Gold, thanks for the business.")
 					else:
 						print("Oh well. Thanks for stopping by.")

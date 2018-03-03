@@ -1,7 +1,7 @@
 import items
 import enemies
 import barriers
-##import npcs
+import NPC
 
 from random import randint 	# Used to generate random integers.
 
@@ -287,10 +287,10 @@ class World:									# I choose to define the world as a class. This makes it mo
 		[BottomLeft(barriers = [barriers.Wall('w'),barriers.Wall('s')]), 								MiddleLeft(barriers = [barriers.Wall('s')]),   									HatchEntrance(barriers = [barriers.Wall('e'),barriers.Wall('s'),barriers.HatchDoor('e')]),HatchExit(barriers = [barriers.Wall('w'),barriers.Wall('s')]),  R2Blank(barriers = [barriers.Wall('e'),barriers.Wall('s')]),     								SpaceTile(),      SpaceTile(),    wormHole(),    	SpaceTile(),	SpaceTile()],
 		[SpaceTile(),																					SpaceTile(),	 																SpaceTile(),   																			SpaceTile(),   													SpaceTile(),   																					SpaceTile(),      SpaceTile(),    wormHole(),    	SpaceTile(),	SpaceTile()],
 		[SpaceTile(),																					SpaceTile(),	 																SpaceTile(),   																			SpaceTile(),   													SpaceTile(),   																					SpaceTile(),      SpaceTile(),    wormHole(),    	SpaceTile(),	SpaceTile()],
-		[wilkinsTile(barriers = [barriers.Wall('w'), barriers.Wall('n')]), 								EmptySpace(barriers = [barriers.Wall('n')]),      								EmptySpace(barriers = [barriers.Wall('e'),barriers.Wall('n')]),   						SpaceTile(),   													SpaceTile(),   																					SpaceTile(),      SpaceTile(),    	SpaceTile(),    SpaceTile(),	SpaceTile()],
+		[wilkinsTile(barriers = [barriers.Wall('w'), barriers.Wall('n')],npcs = [NPC.Wilkins()]), 		EmptySpace(barriers = [barriers.Wall('n')]),      								EmptySpace(barriers = [barriers.Wall('e'),barriers.Wall('n')]),   						SpaceTile(),   													SpaceTile(),   																					SpaceTile(),      SpaceTile(),    	SpaceTile(),    SpaceTile(),	SpaceTile()],
 		[EmptySpace(barriers = [barriers.Wall('w')]),    												EmptySpace(),	 	 															groundNPC(barriers = [barriers.Wall('e')]),   											SpaceTile(),   													SpaceTile(),   																					SpaceTile(),      	SpaceTile(),    SpaceTile(),    SpaceTile(),	SpaceTile()],
-		[riddlerTile(),   																				EmptySpace(),	 	 															EmptySpace(barriers = [barriers.Wall('e')]),    										SpaceTile(),   													SpaceTile(),   																					endStartTile(),		epodTile(),		moveSpace(),	moveSpace(),	moveSpace()],
-		[groundNPC(barriers = [barriers.Wall('e'),barriers.Wall('s')]),   								planetEntrance(),																merchantTile(barriers = [barriers.Wall('e'),barriers.Wall('s')]),						SpaceTile(),  													SpaceTile(),   																					endStartTile(),		epodTile(),		moveSpace(),	BossTile(), 	moveSpace()],
+		[riddlerTile(barriers = [barriers.Wall('w')],npcs = [NPC.Riddler()]),							EmptySpace(),	 	 															EmptySpace(barriers = [barriers.Wall('e')]),    										SpaceTile(),   													SpaceTile(),   																					endStartTile(),		epodTile(),		moveSpace(),	moveSpace(),	moveSpace()],
+		[groundNPC(barriers = [barriers.Wall('e'),barriers.Wall('s')]),   								planetEntrance(),																merchantTile(barriers = [barriers.Wall('e'),barriers.Wall('s')], npcs=[NPC.Merchant()]),						SpaceTile(),  													SpaceTile(),   																					endStartTile(),		epodTile(),		moveSpace(),	BossTile(), 	moveSpace()],
 		[SpaceTile(),   																				SpaceTile(),     																SpaceTile(),   																			SpaceTile(),   													SpaceTile(),   																					endStartTile(),		epodTile(),		moveSpace(),	moveSpace(),	moveSpace()]
 		
 	]

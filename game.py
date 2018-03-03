@@ -202,6 +202,11 @@ def handle_input(verb, noun1, noun2):
 			else:
 				return "I'm not sure what you are trying to %s." % verb
 	else:
+		for npc in world.tile_at(player.x, player.y).npcs:
+			if(npc.name.lower() == "riddler"):
+				if(npc.riddle()):
+					npc.give(items.Gold_Coins(),Player.inventory)
+
 		return "I have no idea what you are trying to do. Please try again."
  
 def print_welcome_text():
