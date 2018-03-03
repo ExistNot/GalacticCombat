@@ -18,6 +18,12 @@ It's """ + self.name + """."""
 		self.damage = items.PBlaster.damage
 		self.ship = PlayerShip()
 		self.shipOpen = False
+	def is_alive(self):
+		if(self.hp <= 0):
+			return False
+		else:
+			return True
+
 	def reload(self):
 		if self.ammo == 0:
 			time.sleep(reloadtime)
