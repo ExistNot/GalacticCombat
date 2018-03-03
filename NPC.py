@@ -71,8 +71,7 @@ class Riddler(NPC):
 		print("the riddle")
 		ranswer = "the answer"
 		pans = input("What is your response?")
-		if pans == ranswer:
-			
+		
 		for item in self.goods:
 			if item.value > 0:
 				if(self.quantities[self.goods.index(item)] > 0):

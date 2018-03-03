@@ -7,7 +7,7 @@ class Player:
 It's """ + self.name + """."""
 	def __init__(self):
 		self.inventory = [items.PBlaster(),items.Hammer(),items.Nail(),items.FusionCannon(),items.Cortex()]
-		self.health	= 100
+		self.hp	= 100
 		self.gold = 0
 		self.ammo = 10
 		self.shields = 50
