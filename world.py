@@ -91,7 +91,6 @@ class MapTile:
 ##Room1 Tiles
 
 class ShipTile(MapTile):
-	
 	description = """You are atop a brass-golden ship:
 					It's missed a Nail, Fusion Core and a Cortex. 
 					You must fix this ship.

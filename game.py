@@ -29,6 +29,14 @@ def play():
 		[raw_input, parsed_input] = parse.get_command()
 		print()							# Print a blank line for spacing purposes.
 		
+		##for if the player is in the ship
+		if(player.shipOpen):#If the player can fly the ship
+			player.x = 3#The player's position is set to outside the "mother-ship"
+			player.y = 3
+		## Checking if the ship is available to use
+		if(player.x == 1 and player.y == 1):
+			[inShip,responce] = player.getinShip()
+			print(responce)
 		
 		if(debug_mode):	
 			print("--------------------------------------------------------")

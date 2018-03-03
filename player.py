@@ -81,16 +81,16 @@ It's """ + self.name + """."""
 			cortexIndex = 0
 			cannonIndex = 0
 			for index in range(len(self.inventory)):
-				if(inventory[index].name.lower() == 'hammer'):
+				if(self.inventory[index].name.lower() == 'hammer'):
 					counter+=1
 					hammerIndex = index
-				if(inventory[index].name.lower() == 'nail'):
+				if(self.inventory[index].name.lower() == 'nail'):
 					counter+=1
 					nailIndex = index
-				if(inventory[index].name.lower() == 'cortex'):
+				if(self.inventory[index].name.lower() == 'cortex'):
 					counter+=1
 					cortexIndex = index
-				if(inventory[index].name.lower() == 'fusion cannon'):
+				if(self.inventory[index].name.lower() == 'fusion cannon'):
 					counter+=1
 					cannonIndex = index
 			if(counter == 4):#All items are present
