@@ -68,6 +68,11 @@ class Riddler(NPC):
 	description = "A Riddler that gives riddles for Gold."
 	def talk(self):		# Add to this method if you want to be able to talk to your NPC.
 		print("Want some Gold? Ask for a riddle and I shall fiddle your mind down the to middle!")
+		print("the riddle")
+		ranswer = "the answer"
+		pans = input("What is your response?")
+		if pans == ranswer:
+			
 		for item in self.goods:
 			if item.value > 0:
 				if(self.quantities[self.goods.index(item)] > 0):
@@ -89,11 +94,6 @@ class Riddler(NPC):
 		self.first_encounter = False
 		text = self.description
 		text += " Hello! A Riddler is my name, riddles are my game! Ask for one and receive the pain. Get it, because they are hard?? Oh? You want a Riddle? Hehehe, Here it is:"
-		print("the riddle")
-		ranswer = "the answer"
-		pans = input("What is your response?")
-		if pans == ranswer:
-			inventory.append(GoldCoins)
 		return text
 	def handle_input(self, verb, noun1, noun2, inventory):
 		if(noun1 == 'riddler' or noun1 == 'a riddler'):
