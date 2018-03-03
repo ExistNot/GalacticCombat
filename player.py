@@ -18,6 +18,7 @@ It's """ + self.name + """."""
 		self.damage = items.PBlaster.damage
 		self.ship = PlayerShip()
 		self.removeShipitems = False
+		self.weapon = None
 	def is_alive(self):
 		if(self.hp <= 0):
 			return False
@@ -31,8 +32,32 @@ It's """ + self.name + """."""
 
 	def print_inventory(self):
 		print("Inventory:")
+		best_weapon = None
+		equipped_weapon = False
 		for item in self.inventory:
-			print('* ' + str(item))
+			inventory_text = '* ' + str(item).title()
+			if(item == self.weapon and not equipped_weapon):
+				inventory_text += ' (equipped)'
+				equipped_weapon = True
+			print(inventory_text)
+			best_weapon = self.most_powerful_weapon()
+		print("* %i Gold" % self.gold)
+		if(best_weapon):
+			print("Your best weapon is your {}.".format(best_weapon))
+		else:
+			print("You are not carrying any weapons.")
+	
+	def most_powerful_weapon(self):
+		max_damage = 0
+		best_weapon = None
+		for item in self.inventory:
+			try:
+				if item.damage > max_damage:
+					best_weapon = item
+					max_damage = item.damage
+			except AttributeError:
+				pass
+		return best_weapon
 	def move(self, dx, dy):
 		self.x += dx
 		self.y += dy
@@ -75,7 +100,8 @@ It's """ + self.name + """."""
 						self.inventory.pop(index)
 				print(responce)
 			else:
-				print (responce)
+				if(responce):
+					print (responce)
 		gold_indices = []
 		gold_total = 0
 		for index in range(len(self.inventory)):
@@ -101,7 +127,7 @@ It's """ + self.name + """."""
 					counter+=1
 				if(self.inventory[index].name.lower() == 'fusion cannon'):
 					counter+=1
-			if(counter == 4 and self.x == 1 and self.y == 1):#All items are present
+			if(counter == 4 ):#All items are present
 					self.ship.open = True
 					self.removeShipitems = True
 					self.x = 3
