@@ -58,11 +58,12 @@ class PBlaster(Weapon):
 		self.attack_description = ["You fire the almight P-Blaster","A laser shoots out from your P-Blaster"]
 
 class shipGun(Weapon):
-s		self.name = "Ship Gun"
-		self.description = "A Giant Cannon that your ship holds"
-		self.damage = 125
-		self.equip_description = "Ship Cannon READY!"
-		self.attack_description = ["You fire the almight Ship-Cannon","A laser shoots out from your Ship Cannon"]
+		def __init__(self):
+			self.name = "Ship Gun"
+			self.description = "A Giant Cannon that your ship holds"
+			self.damage = 125
+			self.equip_description = "Ship Cannon READY!"
+			self.attack_description = ["You fire the almight Ship-Cannon","A laser shoots out from your Ship Cannon"]
 		
 		
 class Gold(Item):

@@ -1,7 +1,7 @@
 import items
 import enemies
 import barriers
-import npcs
+##import npcs
 
 from random import randint 	# Used to generate random integers.
 
@@ -139,17 +139,6 @@ class MapTile:
 					print(agro_text)
 
 
-class StartTile(MapTile):
-	items = [items.Rock()]
-	description = """You find yourself in a cave with a flickering torch on the wall.
-		You can make out a path to the east and to the west, each equally as dark and foreboding.
-		"""
-
-class Corridor(MapTile):
-	description = """You find yourself in a poorly lit corridor."""
-	flavor_text = ["This portion of the cave seems particularly musty.", \
-				"You head nearly brushes the low ceiling.", \
-				"The sound of bats in the distance gives you a chill."]
 	
 	def __init__(self, x=0, y=0, barriers = [], items = [], enemies = [], npcs = []):	# Since this tile appears so much, I gave it its own __init__() function to add random flavor text to some of the tiles.
 		self.x = x
@@ -162,10 +151,7 @@ class Corridor(MapTile):
 			self.add_enemy(enemy)
 		for npc in npcs:
 			self.add_npc(npc)
-			
-		num = randint(0,len(self.flavor_text)*3-1)	# Generate a random number. Based on our range, 1 in 3 corridors will have added flavor text.
-		if(num < len(self.flavor_text)):
-			self.description += " " + self.flavor_text[num]
+
 	
 	def intro_text(self):	# Since this tile appears so much, I gave it its own intro_text function to make its text more descriptive.
 		text = self.description
