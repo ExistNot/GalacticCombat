@@ -6,7 +6,7 @@ class Player:
 		return """Ha, welcome to the Space Training Program. Oh, you forgot your name? 
 It's """ + self.name + """."""
 	def __init__(self):
-		self.inventory = [items.PBlaster()]
+		self.inventory = [items.PBlaster(), items.Sparkling_Gem()]
 		self.hp	= 100
 		self.gold = 0
 		self.ammo = 10
@@ -14,7 +14,7 @@ It's """ + self.name + """."""
 		self.accuracy = 75			#<40 is garbage,   around 50 is okay,    >60 is great
 		self.reloadtime = 2
 		self.x = 1   					
-		self.y = 1
+		self.y = 8
 		self.damage = items.PBlaster.damage
 		self.ship = PlayerShip()
 		self.removeShipitems = False

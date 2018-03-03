@@ -36,7 +36,7 @@ class Wilkins(NPC):
 	description = "A war hardened man that has information on the Invaders."
 	def talk(self):		# Add to this method if you want to be able to talk to your NPC.
 		print("Mr. Wilkins says 'Give me a Gem and you shall receive informations on the Invaders!")
-		if SparklingGem in Player.inventory:	 
+		if Sparkling_Gem in Player.inventory:	 
 				Wilkinsobject = True
 				if (Wilkinsobject == True):
 					for index in range(len(self.inventory)):
@@ -52,6 +52,14 @@ class Wilkins(NPC):
 		text = self.description
 		text += " Mr. Wilkins says you shall receive information on the Invaders if you give me a Sparkling Gem."
 		return text
+		
+	def give(self, item, inventory):
+		for good in self.goods:
+			if(good == item):
+				inventory.append(good)
+				if(self.quantities[self.goods.index(good)] > 0):
+					self.quantities[self.goods.index(good)] -= 1
+		return inventory	
 		
 	def handle_input(self, verb, noun1, noun2, inventory):
 		if(noun1 == 'mr. wilkins' or noun1 == 'wilkins'):

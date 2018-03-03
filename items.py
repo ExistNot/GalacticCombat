@@ -95,10 +95,11 @@ class Shield_Pack(Consumable):
 	description = "A shield pack that increases your shields by 50 to either you or your ship!"
 	dropped_description = "Your shield pack is laying on the ground, ready to be used."
 
-class SparklingGem (Item):
-	value = 20
-	description = "A beautiful, red gem. I believe a certain Invader-Snitch would like this"
-	name = "Sparkling Gem"
+class Sparkling_Gem (Item):
+	def __init__(self):
+		self.value = 20
+		self.description = "A beautiful, red gem. I believe a certain Invader-Snitch would like this"
+		self.name = "Sparkling Gem"
 
 
 
