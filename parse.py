@@ -17,7 +17,7 @@ verbs = {'go': ['go', 'go to', 'walk', 'head', 'move'], \
 	'unlock': ['unlock'], \
 	'lock': ['lock'], \
 	'check': ['check', 'look at', 'look in', 'look', 'examine', 'inspect'], \
-	'attack': ['attack', 'fight', 'kill']}
+	'attack': ['attack', 'fight', 'kill','fire','shoot']}
 	
 implied_verbs = {'go': {'north': ['north', 'n'], 'south': ['south', 's'], 'east': ['east', 'e'], 'west': ['west', 'w']}, 'check': {'inventory': ['inventory', 'i']}}
 	
