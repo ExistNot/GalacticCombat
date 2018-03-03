@@ -35,7 +35,7 @@ class Enemy:
 		text = ""
 		if(self.direction):
 			text = "A %s is blocking your progress to the %s." % (self.name, self.direction)
-		text += " " + self.description			
+		text += " " + self.description
 		return text
 
 	def take_damage(self, amount):

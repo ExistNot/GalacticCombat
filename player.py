@@ -6,7 +6,7 @@ class Player:
 		return """Ha, welcome to the Space Training Program. Oh, you forgot your name? 
 It's """ + self.name + """."""
 	def __init__(self):
-		self.inventory = [items.PBlaster(),items.Hammer(),items.Nail(),items.FusionCannon(),items.Cortex()]
+		self.inventory = [items.PBlaster()]
 		self.hp	= 100
 		self.gold = 0
 		self.ammo = 10
