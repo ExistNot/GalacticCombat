@@ -71,7 +71,7 @@ It's """ + self.name + """."""
 				self.inventory.pop(index)
 			self.gold += gold_total
 			print("Your wealth increased by %d Gold." % gold_total)
-	def getinShip(self):
+	def getinShip(self):# a basic boolean function that only allows ship access if the player the items he/she needs
 		if(self.shipOpen):
 			return[True,"You have access to the ship"]
 		else:
