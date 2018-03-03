@@ -169,6 +169,16 @@ def print_welcome_text():
 	print()
 	print_center("========================================================")
 	print()
+	print("""You suddenly wake up atop a brass-golden ship. As you look around you see a deserted ship bunker. You realize that your in your mother ship, but no one else is here.
+You start to remember:
+Enemy Invaders attacked your fleet. They destroyed everyone: your captain, your rebellion leader,... even your best friend
+In an effort to escape, you plunged into hyper speed, and you crash landed into this old pre-war mother ship
+Your ship was too damaged, but you appear to be standing on another.
+You walk around it and notice that it's missed a Nail, Fusion Core and a Cortex
+The thirst for revenge seethes in your veins. 
+You must fix this ship. 
+You have to defeat the invaders.
+You have to redeem your friends.""")
 
 ### Play the game.
 play()

@@ -89,8 +89,12 @@ class MapTile:
 
 
 ##Room1 Tiles
+
 class ShipTile(MapTile):
-	description = "Starter Room for Player"
+	description = """You suddenly wake up atop a brass-golden ship:
+					It's missed a Nail, Fusion Core and a Cortex. 
+					You must fix this ship. 
+					Find the items you need"""
 class Nail(MapTile):
 	description = ""
 class Hammer(MapTile):

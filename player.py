@@ -16,6 +16,7 @@ It's """ + self.name + """."""
 		self.x = 1   					
 		self.y = 1
 		self.damage = items.PBlaster.damage
+		self.ship = PlayerShip()
 	def reload(self):
 		if self.ammo == 0:
 			time.sleep(reloadtime)
