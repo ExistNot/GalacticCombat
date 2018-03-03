@@ -6,7 +6,7 @@ class Player:
 		return """Ha, welcome to the Space Training Program. Oh, you forgot your name? 
 It's """ + self.name + """."""
 	def __init__(self):
-		self.inventory = [items.PBlaster]
+		self.inventory = [items.PBlaster(),items.Hammer(),items.Nail(),items.FusionCannon(),items.Cortex()]
 		self.health	= 100
 		self.gold = 0
 		self.ammo = 10
@@ -15,7 +15,9 @@ It's """ + self.name + """."""
 		self.reloadtime = 2
 		self.x = 1   					
 		self.y = 1
-		self.damage = PBlaster.damage
+		self.damage = items.PBlaster.damage
+		self.ship = PlayerShip()
+		self.shipOpen = False
 	def reload(self):
 		if self.ammo == 0:
 			time.sleep(reloadtime)
@@ -49,6 +51,66 @@ It's """ + self.name + """."""
 			print("You missed the enemy")
 	def status(self):
 		print("HP = "  + self.health +" Ammo = " + self.ammo )
+		
+	def handle_input(self, verb, noun1, noun2):
+		if(verb == 'check'):
+			for item in self.inventory:
+				if item.name.lower() == noun1:
+					return [True, item.check_text()]
+		return [False, ""]
+		
+	def update_inventory(self):
+		gold_indices = []
+		gold_total = 0
+		for index in range(len(self.inventory)):
+			if(isinstance(self.inventory[index], items.Gold)):
+				gold_total += self.inventory[index].value
+				gold_indices.append(index)
+		if(gold_total > 0):
+			for index in gold_indices:	
+				self.inventory.pop(index)
+			self.gold += gold_total
+			print("Your wealth increased by %d Gold." % gold_total)
+	def getinShip(self):# a basic boolean function that only allows ship access if the player the items he/she needs
+		if(self.shipOpen):
+			return[True,"You have access to the ship"]
+		else:
+			counter = 0 #We will check for the 4 items needed to "enter" the ship
+			hammerIndex = 0
+			nailIndex = 0
+			cortexIndex = 0
+			cannonIndex = 0
+			for index in range(len(self.inventory)):
+				if(self.inventory[index].name.lower() == 'hammer'):
+					counter+=1
+					hammerIndex = index
+				if(self.inventory[index].name.lower() == 'nail'):
+					counter+=1
+					nailIndex = index
+				if(self.inventory[index].name.lower() == 'cortex'):
+					counter+=1
+					cortexIndex = index
+				if(self.inventory[index].name.lower() == 'fusion cannon'):
+					counter+=1
+					cannonIndex = index
+			if(counter == 4):#All items are present
+				#for a in range(len(self.inventory)):
+				#	if(self.inventory[a].name.lower() == 'hammer'):
+				#		self.inventory.pop(a)
+				#	if(self.inventory[a].name.lower() == 'nail'):
+				#		self.inventory.pop(a)
+				#	if(self.inventory[a].name.lower() == 'cortex'):
+				#		self.inventory.pop(a)
+				#	if(self.inventory[a].name.lower() == 'fusion cannon'):
+				#		self.inventory.pop(a)
+				#all items have been removed
+				self.shipOpen = True
+				return [True,"You hammer the nail in place. This cortex fits in smoothly. The fusion cannon is attached behind the ship's barrel. You now have a functioning ship"]
+			else:#help the player realize what they don't have
+				return[False,"You can't access the ship. You need a Fusion Cannon,Cortex,Hammer and Nail"]
+				
+				
+				 
 def myself():
 	print(Player())
 

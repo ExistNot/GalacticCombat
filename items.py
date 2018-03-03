@@ -79,4 +79,23 @@ class Shield_Pack(Consumable):
 	shield_value = 50
 	description = "A shield pack that increases your shields by 50 to either you or your ship!"
 	dropped_description = "Your shield pack is laying on the ground, ready to be used."
+class hatchKey(Item):
+	name = "Hatch Key"
+	description = "This key allows you to open the hatch. Their is a button in the center of it."
 
+class Hammer(Item):
+	name = "Hammer"
+	description = "A strong iron-alloy tool, this hammer will pound any thing into its place."
+	dropped_description = "A hammer lies on the floor"
+class Nail(Item):
+	name = "Nail"
+	description = "A Iron-alloy nail. It appears to look similar to a hole in your ship."
+	dropped_description = "A nail lies on the floor"
+class Cortex(Item):
+	name = "Cortex"
+	description = "A large metal fusion-core, this cortex is the engine of the galaxy. It seems weird for it not to be in a ship"
+	dropped_description = "A metal cortex lies on the floor. It looks like it might help a ship run"
+class FusionCannon(Item):
+	name = "Fusion Cannon"
+	description = "A gigantic laser box, the fusion cannon holds ship laser ammo. Without it, your ship can't shoot"
+	dropped_description = "A Fusion Cannon lies on the floor. It helps your ship fire lasers, so it's probably useful" 

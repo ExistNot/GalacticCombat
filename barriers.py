@@ -28,41 +28,41 @@ class Wall(Barrier):
 	def description(self):
 		return "There doesn't seem to be a path to the %s." % self.direction
 		
-class WoodenDoor(Barrier):
-	name = 'Wooden Door'
+class Door(Barrier):
+	name = 'Door'
 	state = 'closed'	# Used to store the state of doors or hidden passages.
 	
 	verbose = True	# Used to determine whether or not include the barrier's description in the room description.
 	
 	def description(self):
 		if(self.state == 'closed'):
-			return "An old wooden door blocks your path to the %s." % self.direction
+			return "A door blocks your path to the %s. There's an other room! I feel like something important is in there" % self.direction
 		else:
-			return "An old wooden door lies open before you to the %s." % self.direction
+			return "A door lies open before you to the %s." % self.direction
 		
 	def handle_input(self, verb, noun1, noun2, inventory):
-		if(noun1 == 'door' or noun1 == 'wooden door'):
+		if(noun1 == 'door' or noun1 == 'door'):
 			if(verb == 'check'):
 				return [True, self.description(), inventory]
 			if(verb == 'open'):
 				if(self.state == 'closed'):
 					self.state = 'open'
 					self.passable = True
-					return [True, "You tug on the handle, and the wooden door creaks open.", inventory]
+					return [True, "You push the door, and it opens swiftly", inventory]
 				else:
 					return [True, "The door is already open.", inventory]
 			if(verb == 'close'):
 				if(self.state == 'open'):
 					self.state = 'closed'
 					self.passable = False
-					return [True, "You slam the old wooden door shut.", inventory]
+					return [True, "You close the door", inventory]
 				else:
 					return [True, "The door is already closed.", inventory]
 			
 		return [False, "", inventory]
 		
 		
-class LockedDoor(Barrier):
+class HatchDoor(Barrier):
 	name = 'Locked Door'
 	state = 'closed'	# Used to store the state of doors or hidden passages.
 	locked = True		# Used to store the state of locked doors, if applicable.
@@ -72,11 +72,11 @@ class LockedDoor(Barrier):
 	def description(self):
 		if(self.state == 'closed'):
 			if(self.locked):
-				return "An imposing door with a large iron padlock blocks a passageway to the %s." % self.direction
+				return "A hatch blocks a passageway to the %s. It appears to be controlled by a wireless key. Your ship may help you." % self.direction
 			else:
-				return "An imposing door blocks a passageway to the %s. A large iron padlock which once held it shut lies on the ground beside it." % self.direction
+				return "You can now open the hatch"
 		else:
-			return "An imposing door lies open before you to the %s." % self.direction
+			return "The hatch lies open before you to the %s." % self.direction
 		
 	def handle_input(self, verb, noun1, noun2, inventory):
 		if(noun1 == 'door' or noun1 == 'locked door'):
@@ -85,34 +85,34 @@ class LockedDoor(Barrier):
 			if(verb == 'open'):
 				if(self.state == 'closed'):
 					if(self.locked):
-						return [True, "You try to open the door, but the padlock holds it firmly shut. You need to unlock it first.", inventory]
+						return [True, "You try to look for a handle, but the door doesn't have one. If this door is to budge, it'll need some wireless key", inventory]
 					else:
 						self.state = 'open'
 						self.passable = True
-						return [True, "You heave the once-locked door open.", inventory]
+						return [True, "The hatch opens. You can now fly out to space", inventory]
 				else:
-					return [True, "The door is already open.", inventory]
+					return [True, "The hatch is already open. Space awaits you", inventory]
 			if(verb == 'close'):
 				if(self.state == 'open'):
 					self.state = 'closed'
 					self.passable = False
-					return [True, "You push the massive door closed.", inventory]
+					return [True, "You lock the hatch", inventory]
 				else:
-					return [True, "The door is already closed.", inventory]
+					return [True, "The hatch is closed", inventory]
 			if(verb == 'unlock'):
 				if(self.locked):
 					if(noun2 == 'iron key'):
 						for index in range(len(inventory)):
-							if(inventory[index].name.lower() == 'iron key'):
+							if(inventory[index].name.lower() == 'hatch key'):
 								inventory.pop(index)	# Removes the item at this index from the inventory.
 								self.locked = False
-								return [True, "You insert the iron key into the padlock and twist. The padlock falls free with a clang.", inventory]
-						return [True, "You don't seem to have the right key for that door.", inventory]
+								return [True, "You press the button in the middle, and the hatch groans out.", inventory]
+						return [True, "You don't seem to have the right key for the hatch.", inventory]
 					elif(noun2 == 'key'):
 						return [True, "Be more specific. This door only takes a specific key.", inventory]
 					else:
-						return [True, "What item do you plan to unlock that door with?", inventory]
+						return [True, "What item do you plan to unlock the hatch with?", inventory]
 				else:
-					return [True, "The door is already unlocked.", inventory]
+					return [True, "The hatch is already open.", inventory]
 			
 		return [False, "", inventory]
