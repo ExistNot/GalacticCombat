@@ -6,7 +6,7 @@ class Player:
 		return """Ha, welcome to the Space Training Program. Oh, you forgot your name? 
 It's """ + self.name + """."""
 	def __init__(self):
-		self.inventory = [items.PBlaster()]
+		self.inventory = [items.PBlaster(),items.Hammer(),items.Nail(),items.FusionCannon(),items.Cortex()]
 		self.health	= 100
 		self.gold = 0
 		self.ammo = 10
@@ -94,10 +94,15 @@ It's """ + self.name + """."""
 					counter+=1
 					cannonIndex = index
 			if(counter == 4):#All items are present
-				self.inventory.pop(hammerIndex)
-				self.inventory.pop(nailIndex)
-				self.inventory.pop(cortex)
-				self.inventory.pop(cannonIndex)
+				#for a in range(len(self.inventory)):
+				#	if(self.inventory[a].name.lower() == 'hammer'):
+				#		self.inventory.pop(a)
+				#	if(self.inventory[a].name.lower() == 'nail'):
+				#		self.inventory.pop(a)
+				#	if(self.inventory[a].name.lower() == 'cortex'):
+				#		self.inventory.pop(a)
+				#	if(self.inventory[a].name.lower() == 'fusion cannon'):
+				#		self.inventory.pop(a)
 				#all items have been removed
 				self.shipOpen = True
 				return [True,"You hammer the nail in place. This cortex fits in smoothly. The fusion cannon is attached behind the ship's barrel. You now have a functioning ship"]
