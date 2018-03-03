@@ -41,6 +41,19 @@ def play():
 			print()
 			
 
+		if(len(parsed_input) == 3):
+			[verb, noun1, noun2] = parsed_input
+			result_text = handle_input(verb, noun1, noun2)
+			if(result_text):
+				if(isinstance(result_text, list)):	# Find out if there is more than one sentence returned.
+					for text in result_text:
+						print_wrap(text)
+						if("Victory is yours!" in text):
+							print_victory_text()
+				else:
+					print_wrap(result_text)
+					if("Victory is yours!" in result_text):
+						print_victory_text()
 		else:
 			print("Something seems to have gone wrong. Please try again.")
 			
@@ -199,7 +212,20 @@ def print_welcome_text():
 	print()
 	print_center("========================================================")
 	print()
+	
+def print_victory_text():
+	victory_text = ["Thank you for playing!", \
+				"I hope you enjoyed this game engine demo.", \
+				"I look forward to seeing the games you create using this as an example!"]
 				
+	print()
+	print_center("========================================================")
+	print()
+	for line in victory_text:
+		print_center(line)
+	print()
+	print_center("========================================================")
+	exit()
 	
 def print_loss_text():
 	loss_text = ["You have died.", \

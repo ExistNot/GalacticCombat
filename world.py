@@ -196,36 +196,36 @@ class MapTile:
 ##Room1 Tiles
 class ShipTile(MapTile):
 	def intro_text(self):
-		return """Starter Room for Player
+		return """You are in a room with your very own ship!
 		"""
 class Nail(MapTile):
 	def intro_text(self):
-		return """There appears to be a nail of the floor
+		return """There appears to be a nail on the floor.
 		"""
 class Hammer(MapTile):
 	def intro_text(self):
-		return """There appears to be a Hammer of the floor
+		return """There appears to be a Hammer on the floor.
 		"""
 class HatchEntrance(MapTile):
 	def intro_text(self):
-		return """This is the hatch entrance
+		return """This is the hatch entrance.
 		"""
 
 class DoorEntrance(MapTile):
 	def intro_text(self):
-		return """This is a door entrance
+		return """This is a door entrance.
 		"""
 class TopLeft(MapTile):
 	def intro_text(self):
-		return """You are to the Left of the ship
+		return """You are to the Left of the ship.
 		"""
 class MiddleLeft(MapTile):
 	def intro_text(self):
-		return """You are to the left of the ship
+		return """You are to the left of the ship.
 		"""
 class TopMiddle(MapTile):
 	def intro_text(self):
-		return """You are to the In front of the ship
+		return """You are to the In front of the ship.
 		"""
 class BottomLeft(MapTile):
 	def intro_text(self):
@@ -297,23 +297,23 @@ class BossTile(MapTile):
 class epodTile(MapTile):
 	def intro_text(self):
 		return """
-		This Tile Hold the boss
+		This Tile holds the boss
 		"""
 class endStartTile(MapTile):
         def intro_text(self):
                 return """
                         This is the beginning of the end?
                         But for who? You? The Invaders?
-                        3 enemy epod stare out at you. A single ship
+                        3 enemy epods stare out at you. A single ship
                         You feel the sweat of your brow; tensions are rising...
                         Are you ready, to face your destiny
-                        (I guess it doesn't matter, because here, you GOOOOO
+                        (I guess it doesn't matter, because here, you GOOOOO!
                         """
 class moveSpace(MapTile):
         def intro_text(self):
                 return """
                         This is space you can move in.
-                        You're so close... DEFEAT THAT BOSS SHIP
+                        You're so close... DEFEAT THAT BOSS SHIP!
                         """
 
 
