@@ -7,7 +7,7 @@ class Item:
 	dropped_description = "You should define the description for this item after it is dropped in its subclass."
 	
 	is_dropped = False	# This is going to store the status of whether this item has been picked up and dropped before.
-	
+	value = 0
 		
 	def __init__(self, description = ""):
 		if(description):
@@ -36,7 +36,8 @@ class Item:
 	def handle_input(self, verb, noun1, noun2, inventory):
 		return [False, None, inventory]
 		
-class Weapon(Item):
+		
+class Weapon(Item):	
 	equip_description = "You should define flavor text for equipping this item in its subclass."
 	attack_descriptions = ["You should define one or more attack descriptions as a list in your subclass.", "This is an example secondary attack description"]
 
@@ -46,14 +47,25 @@ class Weapon(Item):
 		return self.equip_description
 			
 	def attack(self):
-		return [self.attack_descriptions[randint(0, len(self.attack_descriptions))], self.damage]		# Return damage and a random attack description from your list.
+		return [self.attack_descriptions[randint(0, len(self.attack_descriptions)-1)], self.damage]		# Return damage and a random attack description from your list.
 
 class PBlaster(Weapon):
 	def __init__(self):
 		self.name = "Blaster"
 		self.description = "A Hand held gun used by the cadets and pilots of the space program."
 		self.damage = 25
+		self.equip_description = "Your P-Blaster is locked and Loaded!"
+		self.attack_description = ["You fire the almight P-Blaster","A laser shoots out from your P-Blaster"]
 
+class shipGun(Weapon):
+		def __init__(self):
+			self.name = "Ship Gun"
+			self.description = "A Giant Cannon that your ship holds"
+			self.damage = 125
+			self.equip_description = "Ship Cannon READY!"
+			self.attack_description = ["You fire the almight Ship-Cannon","A laser shoots out from your Ship Cannon"]
+		
+		
 class Gold(Item):
 	value = 0		# Define this appropriately in your subclass.
 		
@@ -65,20 +77,32 @@ class Gold_Coins(Gold):
 	value = 5
 	description = "A small handful of gold coins."
 	dropped_description = "A shiny handful of gold coins is lying on the ground."
+	
+	
 
 class Consumable(Item):
 	consume_description = "You should define flavor text for consuming this item in its subclass."
 
 	shield_value = 0		# Define this appropriately in your subclass.
-		
+	healing_value = 0		# Define this appropriately in your subclass.
 	def consume(self):
 		return [self.consume_description, self.healing_value]
 		
 class Shield_Pack(Consumable):
 	name = "Shield Pack"
 	shield_value = 50
+	value = 10
 	description = "A shield pack that increases your shields by 50 to either you or your ship!"
 	dropped_description = "Your shield pack is laying on the ground, ready to be used."
+
+class SparklingGem (Item):
+	value = 20
+	description = "A beautiful, red gem. I believe a certain Invader-Snitch would like this"
+	name = "Sparkling Gem"
+
+
+
+#items for the ship hanger room
 class hatchKey(Item):
 	name = "Hatch Key"
 	description = "This key allows you to open the hatch. Their is a button in the center of it."
