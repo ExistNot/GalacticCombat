@@ -116,3 +116,7 @@ class HatchDoor(Barrier):
 					return [True, "The hatch is already open.", inventory]
 			
 		return [False, "", inventory]
+		
+class Asteroid(Barrier):
+	def description(self):
+		return "There seems to be asteroids blocking your path to the %s." % self.direction

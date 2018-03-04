@@ -14,7 +14,7 @@ It's """ + self.name + """."""
 		self.accuracy = 75			#<40 is garbage,   around 50 is okay,    >60 is great
 		self.reloadtime = 2
 		self.x = 1   					
-		self.y = 8
+		self.y = 1
 		self.damage = items.PBlaster.damage
 		self.ship = PlayerShip()
 		self.removeShipitems = False

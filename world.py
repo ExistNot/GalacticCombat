@@ -195,71 +195,71 @@ class MapTile:
 		
 class ShipTile(MapTile):
 	description = """You are atop a brass-golden ship:
-					It's missed a Nail, Fusion Core and a Cortex. 
+					It's seems to be missing a Nail, Fusion Core and a Cortex. 
 					You must fix this ship.
-					Enemy invaders are could be swarming around you.
-					Find the items you need, before the enemy find You!"""
+					Enemy invaders could be swarming around you.
+					Find the items you need, before the enemy finds you!"""
 class Nail(MapTile):
 	description = ""
 class Hammer(MapTile):
 	description = ""
 class HatchEntrance(MapTile):
-	description="This is the hatch entrance"
+	description="This is the hatch entrance."
 
 class DoorEntrance(MapTile):
-	description = "This is a door entrance"
+	description = "This is a door entrance."
 
 class TopLeft(MapTile):
-	description="You are to the Left of the ship"
+	description="You are to the left of the ship."
 class MiddleLeft(MapTile):
-	description= "You are to the behind of the ship"
+	description= "You are to the behind of the ship."
 class TopMiddle(MapTile):
-	description="You are to the In front of the ship"
+	description="You are to the in front of the ship."
 class BottomLeft(MapTile):
-	description = "There's a Hammer to the north"
+	description = "There's a hammer to the north."
 ##Room2 Tiles
 class DoorExit(MapTile):
-	description = "You are on the other side of the door"
+	description = "You are on the other side of the door."
 class HatchExit(MapTile):
-	description = "This is the hatch exit"
+	description = "This is the hatch exit."
 class Cortex(MapTile):
-	description = "An other corridor of the mother ship."
+	description = "Another corridor of the mother ship."
 class FusionCannon(MapTile):
-	description = "An other corridor of the mother ship."
+	description = "Another corridor of the mother ship."
 class R2Blank(MapTile):
 	description = "There are much more fascinating parts of the room to explore"
 
 ##Room 3 tiles
 class EmptySpace(MapTile):
-	description = "There are much more fascinating parts of Fo-Land to explore"
+	description = "There are much more fascinating parts of Fo-Land to explore!"
 class SomeOne(MapTile):
 	description = "There is Someone Here(The person will be added)"
 class groundNPC(MapTile):
-        description = "There's an enemy Invader!!!!!!!!!!!"
+        description = "There's an enemy Invader!"
 class wilkinsTile(MapTile):
-        description = "They're a strange man here. His name appears to be MR. WILKINS"
+        description = "There is an old, strange man here."
 class riddlerTile(MapTile):
-        description = "There's something puzzling about this man! He name appears to be A RIDDLER"
+        description = "A man in a jester's costume resides here!"
 class merchantTile(MapTile):
-        description = "There's a MERCHANT here!"
+        description = "There's a merchant here!"
 class planetEntrance(MapTile):
         description = """You have entered FO-LAND!!!!!
-                        Here you will find all the the parts a galaxy pilot could want, and also gossip for the locals
-                        But be careful, Invaders stop here too, and there isn't anyone on in the land that won't rat you out for the high bounty of Galactic Combater's head
-                        Be careful....."""
+                        Here you will find all the the things a galaxy pilot could want. Many of the locals gossip here, you might be able to pluck some information!
+                        But be careful, Invaders stop here too, and there isn't many in the land that won't rat you out for the high bounty of your head.
+                        You are the GALACTIC COMBATTER! Now, be careful..."""
 ##Room 4 and Boss Tiles		
 class BossTile(MapTile):
-	description = "This Tile Holds the boss"
+	description = "The Head Invader hovers here in this deep sector of space!"
 class epodTile(MapTile):
-	description = "This Tile Hold the boss"
+	description = "The Head Invader hovers here in this deep sector of space!"
 class endStartTile(MapTile):
         description = """
                         This is the beginning of the end?
                         But for who? You? The Invaders?
-                        3 enemy epod stare out at you. A single ship
-                        You feel the sweat of your brow; tensions are rising...
-                        Are you ready, to face your destiny
-                        (I guess it doesn't matter, because here, you GOOOOO
+                        3 enemy epods stare out at you. 
+                        You feel the sweat clinging to your brow; tensions are rising...
+                        Are you ready to face your destiny?
+                        I guess it doesn't matter, because here, you GOOOOO
                         """
 class moveSpace(MapTile):
         description = """
@@ -275,22 +275,22 @@ class SpaceTile(MapTile):
 
 class wormHole(MapTile):
         def intro_text(self):
-                return """You are in a worm hole
-                                You are also dead,
-                                Next time try not to stray in empty space
-                                Game Over
+                return """You are in a worm hole!
+                          Death has been brought upon you.
+                          Next time try not to stray in empty space
+                          Game Over
                                 """
 class World:									# I choose to define the world as a class. This makes it more straightforward to import into the game.
 	map = [
-		[TopLeft(barriers = [barriers.Wall('n')]),														TopMiddle(barriers = [barriers.Wall('n')]),	 									DoorEntrance(barriers = [barriers.Wall('n'),barriers.Door('e')]),    					DoorExit(barriers = [barriers.Wall('n')]),    					FusionCannon(barriers = [barriers.Wall('n'),barriers.Wall('e')],items = [items.FusionCannon()]),SpaceTile(),      SpaceTile(),    SpaceTile(),    	SpaceTile(),	SpaceTile()],
-		[Nail(items = [items.Nail()] ),																	ShipTile(),																		Hammer(barriers = [barriers.Wall('e')], items = [ items.Hammer()] ),      				Cortex(barriers = [barriers.Wall('w')],items = [items.Cortex()]),R2Blank(barriers = [barriers.Wall('e')]),     													SpaceTile(),      SpaceTile(),    SpaceTile(),    	SpaceTile(),	SpaceTile()],
-		[BottomLeft(barriers = [barriers.Wall('w'),barriers.Wall('s')]), 								MiddleLeft(barriers = [barriers.Wall('s')]),   									HatchEntrance(barriers = [barriers.Wall('e'),barriers.Wall('s'),barriers.HatchDoor('e')]),HatchExit(barriers = [barriers.Wall('w'),barriers.Wall('s')]),  R2Blank(barriers = [barriers.Wall('e'),barriers.Wall('s')]),     								SpaceTile(),      SpaceTile(),    wormHole(),    	SpaceTile(),	SpaceTile()],
-		[SpaceTile(),																					SpaceTile(),	 																SpaceTile(),   																			SpaceTile(),   													SpaceTile(),   																					SpaceTile(),      SpaceTile(),    wormHole(),    	SpaceTile(),	SpaceTile()],
-		[SpaceTile(),																					SpaceTile(),	 																SpaceTile(),   																			SpaceTile(),   													SpaceTile(),   																					SpaceTile(),      SpaceTile(),    wormHole(),    	SpaceTile(),	SpaceTile()],
-		[wilkinsTile(barriers = [barriers.Wall('w'), barriers.Wall('n')],npcs = [NPC.Wilkins()]), 		EmptySpace(barriers = [barriers.Wall('n')]),      								EmptySpace(barriers = [barriers.Wall('e'),barriers.Wall('n')]),   						SpaceTile(),   													SpaceTile(),   																					SpaceTile(),      SpaceTile(),    	SpaceTile(),    SpaceTile(),	SpaceTile()],
-		[EmptySpace(barriers = [barriers.Wall('w')]),    												EmptySpace(),	 	 															groundNPC(barriers = [barriers.Wall('e')]),   											SpaceTile(),   													SpaceTile(),   																					SpaceTile(),      	SpaceTile(),    SpaceTile(),    SpaceTile(),	SpaceTile()],
+		[TopLeft(barriers = [barriers.Wall('n')]),														TopMiddle(barriers = [barriers.Wall('n')]),	 									DoorEntrance(barriers = [barriers.Wall('n'),barriers.Door('e')]),    					DoorExit(barriers = [barriers.Wall('n')]),    					FusionCannon(barriers = [barriers.Wall('n'),barriers.Wall('e')],items = [items.FusionCannon()]),SpaceTile(),		SpaceTile(),    SpaceTile(),    SpaceTile(),	SpaceTile()],
+		[Nail(items = [items.Nail()] ),																	ShipTile(),																		Hammer(barriers = [barriers.Wall('e')], items = [ items.Hammer()] ),      				Cortex(barriers = [barriers.Wall('w')],items = [items.Cortex()]),R2Blank(barriers = [barriers.Wall('e')]),     													SpaceTile(),		SpaceTile(),    SpaceTile(),    SpaceTile(),	SpaceTile()],
+		[BottomLeft(barriers = [barriers.Wall('w'),barriers.Wall('s')]), 								MiddleLeft(barriers = [barriers.Wall('s')]),   									HatchEntrance(barriers = [barriers.Wall('e'),barriers.Wall('s'),barriers.HatchDoor('e')]),HatchExit(barriers = [barriers.Wall('w'),barriers.Wall('s')]),  R2Blank(barriers = [barriers.Wall('e'),barriers.Wall('s')]),     								SpaceTile(),		SpaceTile(),    wormHole(),    	SpaceTile(),	SpaceTile()],
+		[SpaceTile(),																					SpaceTile(),	 																SpaceTile(),   																			SpaceTile(),   													SpaceTile(),   																					SpaceTile(),		SpaceTile(),    wormHole(),    	SpaceTile(),	SpaceTile()],
+		[SpaceTile(),																					SpaceTile(),	 																SpaceTile(),   																			SpaceTile(),   													SpaceTile(),   																					SpaceTile(),		SpaceTile(),    wormHole(),    	SpaceTile(),	SpaceTile()],
+		[wilkinsTile(barriers = [barriers.Wall('w'), barriers.Wall('n')],npcs = [NPC.Wilkins()]), 		EmptySpace(barriers = [barriers.Wall('n')]),      								EmptySpace(barriers = [barriers.Wall('e'),barriers.Wall('n')]),   						SpaceTile(),   													SpaceTile(),   																					SpaceTile(),		SpaceTile(),    SpaceTile(),    SpaceTile(),	SpaceTile()],
+		[EmptySpace(barriers = [barriers.Wall('w')]),    												EmptySpace(),	 	 															groundNPC(barriers = [barriers.Wall('e')]),   											SpaceTile(barriers = [barriers.Asteroid('w'), barriers.Asteroid('n'), barriers.Asteroid('s')]),		SpaceTile(barriers = [barriers.Asteroid('n'), barriers.Asteroid('s')]),		SpaceTile(barriers = [barriers.Asteroid('n'), barriers.Asteroid('s')]),	SpaceTile(barriers = [barriers.Asteroid('n'), barriers.Asteroid('s')]),SpaceTile(barriers = [barriers.Asteroid('e'), barriers.Asteroid('n'), barriers.Asteroid('s')]),		SpaceTile(),    SpaceTile()],
 		[riddlerTile(barriers = [barriers.Wall('w')],npcs = [NPC.Riddler()]),							EmptySpace(),	 	 															EmptySpace(barriers = [barriers.Wall('e')]),    										SpaceTile(),   													SpaceTile(),   																					endStartTile(),		epodTile(),		moveSpace(),	moveSpace(),	moveSpace()],
-		[groundNPC(barriers = [barriers.Wall('e'),barriers.Wall('s')],enemies = [enemies.Invader()]),  	planetEntrance(),																merchantTile(barriers = [barriers.Wall('e'),barriers.Wall('s')], npcs=[NPC.Merchant()]),						SpaceTile(),  													SpaceTile(),   																					endStartTile(),		epodTile(),		moveSpace(),	BossTile(), 	moveSpace()],
+		[groundNPC(barriers = [barriers.Wall('e'),barriers.Wall('s')],enemies = [enemies.Invader()]),  	planetEntrance(),																merchantTile(barriers = [barriers.Wall('e'),barriers.Wall('s')], npcs=[NPC.Merchant()]),						SpaceTile(),  													SpaceTile(),   															endStartTile(),		epodTile(),		moveSpace(),	BossTile(), 	moveSpace()],
 		[SpaceTile(),   																				SpaceTile(),     																SpaceTile(),   																			SpaceTile(),   													SpaceTile(),   																					endStartTile(),		epodTile(),		moveSpace(),	moveSpace(),	moveSpace()]
 		
 	]
