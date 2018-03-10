@@ -217,7 +217,7 @@ class MiddleLeft(MapTile):
 class TopMiddle(MapTile):
 	description="You are to the in front of the ship."
 class BottomLeft(MapTile):
-	description = "There's a hammer to the north."
+	description = "You are to the left and behind the ship"
 ##Room2 Tiles
 class DoorExit(MapTile):
 	description = "You are on the other side of the door."

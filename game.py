@@ -57,8 +57,6 @@ def play():
 		else:
 			print("Something seems to have gone wrong. Please try again.")
 		
-		if(player.x == 3 and player.y == 3):
-			atShip = True
 		player.update_inventory()
 		world.update_rooms(player)
 		
@@ -221,9 +219,9 @@ def print_welcome_text():
 	print()
 	
 def print_victory_text():
-	victory_text = ["Thank you for playing!", \
-				"I hope you enjoyed this game engine demo.", \
-				"I look forward to seeing the games you create using this as an example!"]
+	victory_text = ["Thank you for playing the Galactic Combat Demo", \
+				"If you enjoied the game, a full version will be coming out soon!",/
+				"End of Game"]
 				
 	print()
 	print_center("========================================================")
