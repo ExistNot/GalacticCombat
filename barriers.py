@@ -15,6 +15,10 @@ class Barrier:
 			self.direction = 'east'
 		elif(direction == 'w'):
 			self.direction = 'west'
+		elif(direction == 'a'):
+			self.direction = 'a'
+		elif(direction == 'go'):
+			self.direction = 'go'
 		else:
 			raise NotImplementedError("Barrier direction is not recognized.")
 	
@@ -120,3 +124,10 @@ class HatchDoor(Barrier):
 class Asteroid(Barrier):
 	def description(self):
 		return "There seems to be asteroids blocking your path to the %s." % self.direction
+class pWall(Barrier):
+	def description(self):
+		if (self.direction == "a"):
+			return "You see a planet to the West"
+		elif(self.direction == "go"):
+			return "You can enter the planet. Head north"
+		return "You see a planet to the %s." % self.direction +  "You cannot enter this planet from here %s." % self.direction

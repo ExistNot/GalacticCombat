@@ -271,8 +271,7 @@ class moveSpace(MapTile):
 
 #Space Tiles	
 class SpaceTile(MapTile):
-	def intro_text(self):
-		return """Nothing is here except space..."""
+	description = "Nothing is here except space..."
 
 class wormHole(MapTile):
         def intro_text(self):
@@ -290,9 +289,9 @@ class World:									# I choose to define the world as a class. This makes it mo
 		[SpaceTile(),																					SpaceTile(),	 																SpaceTile(),   																			SpaceTile(),   													SpaceTile(),   																					SpaceTile(),		SpaceTile(),    wormHole(),    	SpaceTile(),	SpaceTile()],
 		[wilkinsTile(barriers = [barriers.Wall('w'), barriers.Wall('n')],npcs = [NPC.Wilkins()]), 		EmptySpace(barriers = [barriers.Wall('n')]),      								EmptySpace(barriers = [barriers.Wall('e'),barriers.Wall('n')]),   						SpaceTile(),   													SpaceTile(),   																					SpaceTile(),		SpaceTile(),    SpaceTile(),    SpaceTile(),	SpaceTile()],
 		[EmptySpace(barriers = [barriers.Wall('w')]),    												EmptySpace(),	 	 															groundNPC(barriers = [barriers.Wall('e')]),   											SpaceTile(barriers = [barriers.Asteroid('w'), barriers.Asteroid('n'), barriers.Asteroid('s')]),		SpaceTile(barriers = [barriers.Asteroid('n'), barriers.Asteroid('s')]),		SpaceTile(),	SpaceTile(barriers = [barriers.Asteroid('e')]),SpaceTile(),		SpaceTile(),    SpaceTile()],
-		[riddlerTile(barriers = [barriers.Wall('w')],npcs = [NPC.Riddler()]),							EmptySpace(),	 	 															EmptySpace(barriers = [barriers.Wall('e')]),    										SpaceTile(),   													SpaceTile(),   																					SpaceTile(),		epodTile(),		moveSpace(),	moveSpace(),	moveSpace()],
-		[groundNPC(barriers = [barriers.Wall('e'),barriers.Wall('s')],enemies = [enemies.Invader()]),  	planetEntrance(),																merchantTile(barriers = [barriers.Wall('e'),barriers.Wall('s')], npcs=[NPC.Merchant()]),						SpaceTile(),  													SpaceTile(),   															SpaceTile(),		epodTile(),		moveSpace(),	BossTile(), 	moveSpace()],
-		[SpaceTile(),   																				SpaceTile(),     																SpaceTile(),   																			SpaceTile(),   													SpaceTile(),   																					SpaceTile(),		epodTile(),		moveSpace(),	moveSpace(),	moveSpace()]
+		[riddlerTile(barriers = [barriers.Wall('w')],npcs = [NPC.Riddler()]),							EmptySpace(),	 	 															EmptySpace(barriers = [barriers.Wall('e')]),    										SpaceTile(barriers = [barriers.pWall('w')]),   						SpaceTile(),   																					SpaceTile(),		epodTile(),		moveSpace(),	moveSpace(),	moveSpace()],
+		[groundNPC(barriers = [barriers.Wall('e'),barriers.Wall('s')],enemies = [enemies.Invader()]),  	planetEntrance(),																merchantTile(barriers = [barriers.Wall('e'),barriers.Wall('s')], npcs=[NPC.Merchant()]),SpaceTile(barriers = [barriers.pWall('w')]),  						SpaceTile(),   															SpaceTile(),		epodTile(),		moveSpace(),	BossTile(), 	moveSpace()],
+		[SpaceTile(),   																				SpaceTile(barriers = [barriers.pWall('go')]),     																SpaceTile(barriers = [barriers.pWall('a'),barriers.pWall('n')]),   																			SpaceTile(barriers = [barriers.pWall('a')]),   													SpaceTile(),   																					SpaceTile(),		epodTile(),		moveSpace(),	moveSpace(),	moveSpace()]
 		
 	]
 
