@@ -13,8 +13,8 @@ It's """ + self.name + """."""
 		self.shields = 50
 		self.accuracy = 75			#<40 is garbage,   around 50 is okay,    >60 is great
 		self.reloadtime = 2
-		self.x = 0 					##CHange this
-		self.y = 5
+		self.x = 1 					##CHange this
+		self.y = 1
 		self.damage = items.PBlaster.damage
 		self.ship = PlayerShip()
 		self.removeShipitems = False
@@ -150,7 +150,7 @@ It's """ + self.name + """."""
 					self.y = 3
 					return "You hammer the nail in place. This cortex fits in smoothly. The fusion cannon is attached behind the ship's barrel. You now have a functioning ship.You exit the hatch door and are thrust into space"
 			else:#help the player realize what they don't have
-					return"You can't access the ship. You need a Fusion Cannon,Cortex,Hammer and Nail"
+					return""
 		else:
 			return None
 	def take_damage(self, amount):
