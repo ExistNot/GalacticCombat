@@ -185,6 +185,7 @@ def handle_input(verb, noun1, noun2):
 				else:
 					player.inventory = tile.npcs[0].give(items.Sparkling_Gem(),player.inventory)
 					tile.npcs[0].giveInfo()
+					return "Victory is yours!"
 			else:
 				return "You can't give that!"
 		else:
@@ -220,7 +221,7 @@ def print_welcome_text():
 	
 def print_victory_text():
 	victory_text = ["Thank you for playing the Galactic Combat Demo", \
-				"If you enjoyed the game, a full version will be coming out soon!",\
+				"A full version will be coming out soon!",\
 				"End of Game"]
 				
 	print()
