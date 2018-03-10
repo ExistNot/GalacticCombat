@@ -138,7 +138,12 @@ class MapTile:
 					print()
 					print(agro_text)
 		##Something that changes the ship tile description to "", so that nothing is printed.
-	
+	def hasWilkins(self):
+		for npc in self.NPC: 
+			if(npc.name.lower() == "mr. wilkins"):
+				return True
+			
+		return False
 
 	
 	def __init__(self, x=0, y=0, barriers = [], items = [], enemies = [], npcs = []):	# Since this tile appears so much, I gave it its own __init__() function to add random flavor text to some of the tiles.
@@ -238,7 +243,7 @@ class SomeOne(MapTile):
 class groundNPC(MapTile):
         description = "There's an enemy Invader!"
 class wilkinsTile(MapTile):
-        description = "There is an old, strange man here."
+        description = ""
 class riddlerTile(MapTile):
         description = "A man in a jester's costume resides here!"
 class merchantTile(MapTile):

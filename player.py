@@ -6,15 +6,15 @@ class Player:
 		return """Ha, welcome to the Space Training Program. Oh, you forgot your name? 
 It's """ + self.name + """."""
 	def __init__(self):
-		self.inventory = [items.PBlaster(), items.Sparkling_Gem(),items.Hammer(),items.Nail(),items.Cortex(),items.FusionCannon()]##CHAGNE THIS
+		self.inventory = [items.PBlaster(), items.Sparkling_Gem(),items.Hammer(),items.Nail(),items.Cortex(),items.FusionCannon(),items.Sparkling_Gem()]##CHAGNE THIS
 		self.hp	= 100
 		self.gold = 0
 		self.ammo = 10
 		self.shields = 50
 		self.accuracy = 75			#<40 is garbage,   around 50 is okay,    >60 is great
 		self.reloadtime = 2
-		self.x = 1  					##CHange this
-		self.y = 1
+		self.x = 0  					##CHange this
+		self.y = 5
 		self.damage = items.PBlaster.damage
 		self.ship = PlayerShip()
 		self.removeShipitems = False
@@ -101,17 +101,6 @@ It's """ + self.name + """."""
 		return [False, ""]
 		
 	def update_inventory(self):
-		#Remove the hammer nail, cortex and fusion cannon if the player "has" the ship"
-		#if(not self.removeShipitems):
-		#	responce = self.getinShip()
-		#	if(self.removeShipitems):
-		#		for index in range(len(self.inventory)):
-		#			if(self.inventory[index].name.lower() == "hammer" and self.inventory[index].name.lower() == "nail" and self.inventory[index].name.lower() == "cortex" and self.inventory[index].name.lower() == "fusion cannon"):
-		#				self.inventory.pop(index)
-		#		print(responce)
-		#	else:
-		#		if(responce):
-		#			print (responce)
 		gold_indices = []
 		gold_total = 0
 		for index in range(len(self.inventory)):

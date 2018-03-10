@@ -28,37 +28,42 @@ class NPC:
 		
 	def handle_input(self, verb, noun1, noun2, inventory):
 		return [False, None, inventory]
+		
+	def canGive(self, item, inventory):
+		for index in range(len(inventory)):
+			if(inventory[index].name == item.name):
+				return True
+		return False
 class Wilkins(NPC):
 	name = "Mr. Wilkins"
-	goods = []
-	quantities = [1, -1, 2]		# Set quantity to -1 if you want it to be infinite.
+	first_encounter = True
 	
-	description = "A war hardened man that has information on the Invaders."
-	def talk(self):		# Add to this method if you want to be able to talk to your NPC.
-		print("Mr. Wilkins says 'Give me a Gem and you shall receive informations on the Invaders!")
-		if Sparkling_Gem in Player.inventory:	 
-				Wilkinsobject = True
-				if (Wilkinsobject == True):
-					for index in range(len(self.inventory)):
-						if(isinstance(self.inventory[index], items.SparklingGem)):
-							for index in reversed(SparklingGem_indices):		# Reversed to avoid popping the wrong element.	
-								self.inventory.pop(index)
-								print("""Thanks. Here's the info, don't tell anybody... 
-								The Invader's commander is located in the bottom right sector of space.""")
-				else:
-					print("It's not there, try again")
+	quantities = [1, -1, 2]		# Set quantity to -1 if you want it to be infinite.
+	description = "There is an strange, old man here. He says his name is 'Mr. Wilkins' "
+	def talk(self):	# Add to this method if you want to be able to talk to your NPC.
+		if(not self.first_encounter):
+			print ("Mr. Wilkins grunts: 'There's nothing I can tell ya kid. Good luck with your mission ' ")
+		else:
+			print("Mr. Wilkins says: 'Give me a Gem and you shall receive informations on the Invaders!' ")
+		
+		
 	def first_time(self):		# Used to have your NPC do something different the first time you see them.
 		self.first_encounter = False
 		text = self.description
-		text += " Mr. Wilkins says you shall receive information on the Invaders if you give me a Sparkling Gem."
+		text += """ 
+Mr. Wilkins says: 'You shall receive information on the Invaders if you give me a Sparkling Gem.' """
 		return text
 		
+	def giveInfo(self):
+		infoGiven = True
+		print( """ You gave Mr. Wilkins teh Sparkling Gem 
+Mr. Wilkins says: "Thanks. Here's the info, don't tell anybody... 
+The Invader's commander is located in the bottom right sector of space." """)
+	
 	def give(self, item, inventory):
-		for good in self.goods:
-			if(good == item):
-				inventory.append(good)
-				if(self.quantities[self.goods.index(good)] > 0):
-					self.quantities[self.goods.index(good)] -= 1
+		for index in reversed(range(len(inventory))):
+			if(inventory[index].name.lower() == "sparkling gem"):
+				inventory.pop(index)
 		return inventory	
 		
 	def handle_input(self, verb, noun1, noun2, inventory):

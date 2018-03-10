@@ -4,6 +4,7 @@ from formattext import *				# Import some important functions for formatting tex
 from player import Player
 from world import World
 import parse
+import items
 
 debug_mode = True	# Use this to toggle verbose mode on the text parser.
 
@@ -173,23 +174,21 @@ def handle_input(verb, noun1, noun2):
 		else:
 			return "If you want to attack 'with' a weapon, please equip it first."
 		return "I'm not sure what you're trying to attack."
-	elif(verb == 'buy'):
-		for npc in world.tile_at(player.x, player.y).npcs:
-			for good in npc.goods:
-				if(noun1 == good.name):
-					if(good.value > 0):
-						if(player.gold >= good.value):
-							player.gold -= good.value
-							player.inventory = npc.give(good, player.inventory)
-							return "You purchased the %s from the %s for %d gold." % (good.name, npc.name, good.value)
-						else:
-							return "You can't afford that."
-					else:
-						return "It appears to be a gift. Have you tried taking it?"
-				
-		return "That doesn't seem to be for sale."
-
-			
+		
+	elif(verb == 'give'):#Wilkins is at the tile.
+		if(noun1):
+			if(noun1.lower() == "sparkling gem"):
+				tile = world.tile_at(player.x,player.y)
+				if(not tile.npcs[0].canGive(items.Sparkling_Gem(),player.inventory)):
+					tile.npcs[0].talk()
+				else:
+					player.inventory = tile.npcs[0].give(items.Sparkling_Gem(),player.inventory)
+					tile.npcs[0].giveInfo()
+			else:
+				return "You can't give that!"
+		else:
+			return "What would you like to give"
+		
 	elif(verb):
 		[status, description] = player.handle_input(verb, noun1, noun2)
 		if(status):
@@ -220,7 +219,7 @@ def print_welcome_text():
 	
 def print_victory_text():
 	victory_text = ["Thank you for playing the Galactic Combat Demo", \
-				"If you enjoied the game, a full version will be coming out soon!",/
+				"If you enjoyed the game, a full version will be coming out soon!",\
 				"End of Game"]
 				
 	print()
