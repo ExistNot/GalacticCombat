@@ -44,11 +44,11 @@ class Wilkins(NPC):
 		if(not self.first_encounter):
 			print ("Mr. Wilkins grunts: 'There's nothing I can tell ya kid. Good luck with your mission ' ")
 		else:
-			print("Mr. Wilkins says: 'Give me a Gem and you shall receive informations on the Invaders!' ")
+			print("Mr. Wilkins says: 'Give me a Gem and you shall receive informations on the Invaders! There are a few through out this planet. Many invaders have taken them though.' ")
 		
 		
 	def first_time(self):		# Used to have your NPC do something different the first time you see them.
-		self.first_encounter = False
+		self.first_encounter = True
 		text = self.description
 		text += """ 
 Mr. Wilkins says: 'You shall receive information on the Invaders if you give me a Sparkling Gem.' """

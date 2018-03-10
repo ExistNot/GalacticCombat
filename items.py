@@ -96,10 +96,10 @@ class Shield_Pack(Consumable):
 	dropped_description = "Your shield pack is laying on the ground, ready to be used."
 
 class Sparkling_Gem (Item):
-	def __init__(self):
-		self.value = 20
-		self.description = "A beautiful, red gem. I believe a certain Invader-Snitch would like this"
-		self.name = "Sparkling Gem"
+	value = 20
+	description = "A beautiful, red gem. I believe a certain Invader-Snitch would like this."
+	name = "Sparkling Gem"
+	dropped_description = "A Sparkling Gem shines on the ground."
 
 
 
@@ -111,16 +111,16 @@ class hatchKey(Item):
 class Hammer(Item):
 	name = "Hammer"
 	description = "A strong iron-alloy tool, this hammer will pound any thing into its place."
-	dropped_description = "A hammer lies on the floor"
+	dropped_description = "A hammer lies on the floor. You'll need it to 'hammer' in the nail"
 class Nail(Item):
 	name = "Nail"
 	description = "A Iron-alloy nail. It appears to look similar to a hole in your ship."
-	dropped_description = "A nail lies on the floor"
+	dropped_description = "A nail lies on the floor. You need that to fix the ship."
 class Cortex(Item):
 	name = "Cortex"
 	description = "A large metal fusion-core, this cortex is the engine of the galaxy. It seems weird for it not to be in a ship"
-	dropped_description = "A metal cortex lies on the floor. It looks like it might help a ship run"
+	dropped_description = "A metal cortex lies on the floor. It looks like it might help a ship run."
 class FusionCannon(Item):
 	name = "Fusion Cannon"
 	description = "A gigantic laser box, the fusion cannon holds ship laser ammo. Without it, your ship can't shoot"
-	dropped_description = "A Fusion Cannon lies on the floor. It helps your ship fire lasers, so it's probably useful" 
+	dropped_description = "A Fusion Cannon lies on the floor. It helps your ship fire lasers, so it's probably useful." 

@@ -138,13 +138,6 @@ class MapTile:
 					print()
 					print(agro_text)
 		##Something that changes the ship tile description to "", so that nothing is printed.
-	def hasWilkins(self):
-		for npc in self.NPC: 
-			if(npc.name.lower() == "mr. wilkins"):
-				return True
-			
-		return False
-
 	
 	def __init__(self, x=0, y=0, barriers = [], items = [], enemies = [], npcs = []):	# Since this tile appears so much, I gave it its own __init__() function to add random flavor text to some of the tiles.
 		self.x = x
@@ -200,15 +193,15 @@ class MapTile:
 	
 		
 class ShipTile(MapTile):
-	description = """You are atop a brass-golden ship:
-					It's seems to be missing a Nail, Fusion Core and a Cortex. 
+	description = """You are atop a golden-brass ship:
+					It's seems to be missing a Nail, Fusion Cannon and a Cortex. 
 					You must fix this ship.
 					Enemy invaders could be swarming around you.
 					Find the items you need, before the enemy finds you!"""
 class Nail(MapTile):
-	description = ""
+	description =  "Another corridor of the hanger."
 class Hammer(MapTile):
-	description = ""
+	description =  "Another corridor of the hanger."
 class HatchEntrance(MapTile):
 	description="This is the hatch entrance."
 
@@ -222,37 +215,39 @@ class MiddleLeft(MapTile):
 class TopMiddle(MapTile):
 	description="You are to the in front of the ship."
 class BottomLeft(MapTile):
-	description = "You are to the left and behind the ship"
+	description = "You are to the left and behind the ship."
 ##Room2 Tiles
 class DoorExit(MapTile):
 	description = "You are on the other side of the door."
 class HatchExit(MapTile):
 	description = "This is the hatch exit."
 class Cortex(MapTile):
-	description = "Another corridor of the mother ship."
+	description = "Another corridor of the hanger."
 class FusionCannon(MapTile):
-	description = "Another corridor of the mother ship."
+	description = "Another corridor of the hanger."
 class R2Blank(MapTile):
-	description = "There are much more fascinating parts of the room to explore"
+	description = "There are much more fascinating parts of the room to explore."
 
 ##Room 3 tiles
 class EmptySpace(MapTile):
-	description = "There are much more fascinating parts of Fo-Land to explore!"
+	description = """The sand crushes underneath your boots. It's very hot, and you need to find an informant fast!
+No one is here.
+There are much more fascinating parts of Fo-Land to explore!"""
 class SomeOne(MapTile):
-	description = "There is Someone Here(The person will be added)"
+	description = "There is Someone Here(The person will be added)."
 class groundNPC(MapTile):
-        description = "There's an enemy Invader!"
+        description = "You step "
 class wilkinsTile(MapTile):
-        description = ""
+        description = "The sand crushes underneath your boots."
 class riddlerTile(MapTile):
         description = "A man in a jester's costume resides here!"
 class merchantTile(MapTile):
         description = "There's a merchant here!"
 class planetEntrance(MapTile):
         description = """You have entered FO-LAND!!!!!
-                        Here you will find all the the things a galaxy pilot could want. Many of the locals gossip here, you might be able to pluck some information!
-                        But be careful, Invaders stop here too, and there isn't many in the land that won't rat you out for the high bounty of your head.
-                        You are the GALACTIC COMBATTER! Now, be careful..."""
+This desert oasis is home to friends ... and foe.
+You'll need some information on invaders if you are going to defeat them.
+Ask for information with caution: invaders may lurk in very corner."""
 ##Room 4 and Boss Tiles		
 class BossTile(MapTile):
 	description = "The Head Invader hovers here in this deep sector of space!"
@@ -276,8 +271,7 @@ class moveSpace(MapTile):
 
 #Space Tiles	
 class SpaceTile(MapTile):
-	description = "Nothing is here except space..."
-
+	description = "Nothing is here except space...You need to attack the Invaders, but you do not know where they are. You remember that there are informants on the planet Fo-Land. Try to go there"
 class wormHole(MapTile):
         def intro_text(self):
                 return """You are in a worm hole!

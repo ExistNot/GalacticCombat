@@ -60,7 +60,7 @@ class Enemy:
 
 class Invader(Enemy):## ground troop
 	name = "Invader"
-	description = "This is a ruthless killing machine. Kill it before it get you!"
+	description = "There's an enemy Invader here. This is a ruthless killing machine. Kill it before it kills you!"
 	hp = 30
 	damage = 10
 

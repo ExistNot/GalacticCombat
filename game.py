@@ -180,6 +180,7 @@ def handle_input(verb, noun1, noun2):
 			if(noun1.lower() == "sparkling gem"):
 				tile = world.tile_at(player.x,player.y)
 				if(not tile.npcs[0].canGive(items.Sparkling_Gem(),player.inventory)):
+					print("You search through your inventory, but you do not find a sparkling gem")
 					tile.npcs[0].talk()
 				else:
 					player.inventory = tile.npcs[0].give(items.Sparkling_Gem(),player.inventory)
