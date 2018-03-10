@@ -65,7 +65,7 @@ It's """ + self.name + """."""
 		if(not self.removeShipitems):
 			responce = self.getinShip()
 			if(self.removeShipitems):
-				for index in range(len(self.inventory)):
+				for index in reverse (range(len(self.inventory))):
 					if(self.inventory[index].name.lower() == "hammer" and self.inventory[index].name.lower() == "nail" and self.inventory[index].name.lower() == "cortex" and self.inventory[index].name.lower() == "fusion cannon"):
 						self.inventory.pop(index)
 				print(responce)
