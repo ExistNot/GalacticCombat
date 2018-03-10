@@ -40,7 +40,7 @@ def play():
 			print("--------------------------------------------------------")
 			print()
 			
-
+		## check if the player is at 
 		if(len(parsed_input) == 3):
 			[verb, noun1, noun2] = parsed_input
 			result_text = handle_input(verb, noun1, noun2)
@@ -56,7 +56,9 @@ def play():
 						print_victory_text()
 		else:
 			print("Something seems to have gone wrong. Please try again.")
-			
+		
+		if(player.x == 3 and player.y == 3):
+			atShip = True
 		player.update_inventory()
 		world.update_rooms(player)
 		

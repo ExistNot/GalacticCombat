@@ -137,7 +137,8 @@ class MapTile:
 					agro_text += player.take_damage(enemy.damage)
 					print()
 					print(agro_text)
-
+		##Something that changes the ship tile description to "", so that nothing is printed.
+	
 
 	
 	def __init__(self, x=0, y=0, barriers = [], items = [], enemies = [], npcs = []):	# Since this tile appears so much, I gave it its own __init__() function to add random flavor text to some of the tiles.

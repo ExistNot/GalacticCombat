@@ -6,7 +6,7 @@ class Player:
 		return """Ha, welcome to the Space Training Program. Oh, you forgot your name? 
 It's """ + self.name + """."""
 	def __init__(self):
-		self.inventory = [items.PBlaster(), items.Sparkling_Gem()]
+		self.inventory = [items.PBlaster(), items.Sparkling_Gem(),items.Hammer(),items.Nail(),items.Cortex(),items.FusionCannon()]
 		self.hp	= 100
 		self.gold = 0
 		self.ammo = 10
@@ -61,7 +61,17 @@ It's """ + self.name + """."""
 	def move(self, dx, dy):
 		self.x += dx
 		self.y += dy
-
+		#Remove the hammer nail, cortex and fusion cannon if the player "has" the ship"
+		if(not self.removeShipitems):
+			responce = self.getinShip()
+			if(self.removeShipitems):
+				for index in range(len(self.inventory)):
+					if(self.inventory[index].name.lower() == "hammer" and self.inventory[index].name.lower() == "nail" and self.inventory[index].name.lower() == "cortex" and self.inventory[index].name.lower() == "fusion cannon"):
+						self.inventory.pop(index)
+				print(responce)
+			else:
+				if(responce):
+					print (responce)
 	def move_north(self):
 		self.move(dx=0, dy=-1)
 
@@ -92,16 +102,16 @@ It's """ + self.name + """."""
 		
 	def update_inventory(self):
 		#Remove the hammer nail, cortex and fusion cannon if the player "has" the ship"
-		if(not self.removeShipitems):
-			responce = self.getinShip()
-			if(self.removeShipitems):
-				for index in range(len(self.inventory)):
-					if(self.inventory[index].name.lower() == "hammer" and self.inventory[index].name.lower() == "nail" and self.inventory[index].name.lower() == "cortex" and self.inventory[index].name.lower() == "fusion cannon"):
-						self.inventory.pop(index)
-				print(responce)
-			else:
-				if(responce):
-					print (responce)
+		#if(not self.removeShipitems):
+		#	responce = self.getinShip()
+		#	if(self.removeShipitems):
+		#		for index in range(len(self.inventory)):
+		#			if(self.inventory[index].name.lower() == "hammer" and self.inventory[index].name.lower() == "nail" and self.inventory[index].name.lower() == "cortex" and self.inventory[index].name.lower() == "fusion cannon"):
+		#				self.inventory.pop(index)
+		#		print(responce)
+		#	else:
+		#		if(responce):
+		#			print (responce)
 		gold_indices = []
 		gold_total = 0
 		for index in range(len(self.inventory)):
