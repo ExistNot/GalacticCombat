@@ -13,8 +13,8 @@ It's """ + self.name + """."""
 		self.shields = 50
 		self.accuracy = 75			#<40 is garbage,   around 50 is okay,    >60 is great
 		self.reloadtime = 2
-		self.x = 0  					##CHange this
-		self.y = 5
+		self.x = 2  					##CHange this
+		self.y = 6
 		self.damage = items.PBlaster.damage
 		self.ship = PlayerShip()
 		self.removeShipitems = False
@@ -98,6 +98,23 @@ It's """ + self.name + """."""
 			for item in self.inventory:
 				if item.name.lower() == noun1:
 					return [True, item.check_text()]
+		elif(verb == 'equip'):
+			for item in self.inventory:
+				if item.name.lower() == noun1:
+					if(isinstance(item, items.Weapon)):
+						if(self.weapon != item):
+							self.weapon = item
+							return [True, item.equip_description]
+						else:
+							return [True, "You already have your %s equipped." % item.name]
+		elif(verb == 'unequip'):
+			for item in self.inventory:
+				if item.name.lower() == noun1:
+					if(isinstance(item, items.Weapon)):
+						if(self.weapon == item):
+							self.weapon = None
+							return [True, "You have unequipped your %s." % item.name]
+			return [True, "That does not appear to be equipped right now."]
 		return [False, ""]
 		
 	def update_inventory(self):
@@ -136,6 +153,13 @@ It's """ + self.name + """."""
 					return"You can't access the ship. You need a Fusion Cannon,Cortex,Hammer and Nail"
 		else:
 			return None
+	def take_damage(self, amount):
+		self.hp -= amount
+		if(self.hp <= 0):
+			self.hp = 0
+			return "Your health is critical... everything is getting dark."
+		else:
+			return "You took %d damage." % amount
 
 def myself():
 	print(Player())

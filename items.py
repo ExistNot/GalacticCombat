@@ -55,7 +55,7 @@ class PBlaster(Weapon):
 		self.description = "A Hand held gun used by the cadets and pilots of the space program."
 		self.damage = 25
 		self.equip_description = "Your P-Blaster is locked and Loaded!"
-		self.attack_description = ["You fire the almight P-Blaster","A laser shoots out from your P-Blaster"]
+		self.attack_descriptions = ["You fire the almight P-Blaster","A laser shoots out from your P-Blaster"]
 
 class shipGun(Weapon):
 		def __init__(self):
