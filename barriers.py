@@ -125,9 +125,10 @@ class Asteroid(Barrier):
 	def description(self):
 		return "There seems to be asteroids blocking your path to the %s." % self.direction
 class pWall(Barrier):
+	verbose = True
 	def description(self):
 		if (self.direction == "a"):
-			return "You see a planet to the West"
+			return "\nYou see a planet to the West"
 		elif(self.direction == "go"):
-			return "You can enter the planet. Head north"
-		return "You see a planet to the %s." % self.direction +  "You cannot enter this planet from here %s." % self.direction
+			return "\nYou can enter the planet. Head north"
+		return "\nYou see a planet to the %s." % self.direction +  "You cannot enter this planet from %s." % self.direction
