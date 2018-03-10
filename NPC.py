@@ -56,7 +56,7 @@ Mr. Wilkins says: 'You shall receive information on the Invaders if you give me 
 		
 	def giveInfo(self):
 		infoGiven = True
-		print( """ You gave Mr. Wilkins teh Sparkling Gem 
+		print( """ You gave Mr. Wilkins the Sparkling Gem 
 Mr. Wilkins says: "Thanks. Here's the info, don't tell anybody... 
 The Invader's commander is located in the bottom right sector of space." """)
 	
