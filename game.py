@@ -13,7 +13,7 @@ game_name = "Galactic Combat"
 help_text = "To interact with this game world, you will use a basic text-based interface. \
 Try single-word commands like 'inventory' or 'west' (or their counterpart abbreviations, 'i' or 'w', respectively \
 to get started. For more complex interactions, use commands of the format [VERB][NOUN] (e.g. 'open door', \
-or in some cases, [VERB][NOUN][OBJECT] (e.g. 'attack thief with nasty knife').\
+or in some cases, [VERB][NOUN][OBJECT] (e.g. 'attack invader with pblaster') To avoid saying 'kill - with -' you can equip weapons.\
 The game will ignore the articles 'a', 'an', and 'the' (e.g. 'open the door' is the same as 'open door.').\n\n\
 To toggle output from the game parser, type 'debug'. To exit the game at any time, type 'exit' or 'quit'."
 
