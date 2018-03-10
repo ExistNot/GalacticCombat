@@ -119,7 +119,7 @@ class Nail(Item):
 class Cortex(Item):
 	name = "Cortex"
 	description = "A large metal fusion-core, this cortex is the engine of the galaxy. It seems weird for it not to be in a ship"
-	dropped_description = "A metal cortex lies on the floor. It looks like it might help a ship run."
+	dropped_description = "A cortex lies on the floor. It looks like it might help a ship run."
 class FusionCannon(Item):
 	name = "Fusion Cannon"
 	description = "A gigantic laser box, the fusion cannon holds ship laser ammo. Without it, your ship can't shoot"
